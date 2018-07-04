@@ -1,0 +1,18 @@
+
+<div>
+    <div align="center"><img src="http://jshomes.in/images/login.jpg" alt="Girl in a jacket" style="width:370px;height:190px;"></div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form money">
+            <label>Email:</label>
+            <input class="visibilityHidden" type="text" placeholder="username" [(ngModel)]="user1.email" name="email" #email1 required/>
+            <label>Password:</label>
+            <input class="visibilityHidden" type="password" placeholder="password" [(ngModel)]="user1.password" name="password" #password1 required/>
+            <input id="greenbtn" class="submit font-weight-bold" type="submit" value="LOGIN" (click)="login()" email1.value='' password1.value=''>
+            <button   (click)="registration()" class="message">Not registered?  <a >Create an account</a></button>
+          </form>
+        </div>
+    </div>
+  </div>
+  
+  <!-- onclick="location.href='/registration'"  -->

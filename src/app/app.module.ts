@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import {enableProdMode} from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const appRoutes:Routes=[
   {path:'navbar',component:NavbarComponent},
   {path:  '', redirectTo: '/navbar', pathMatch: 'full'},
+  {path:'login',component:LoginComponent},
   
   
 ];
@@ -25,7 +27,8 @@ enableProdMode();
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
