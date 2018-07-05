@@ -11,12 +11,14 @@ import {enableProdMode} from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { StatesComponent } from './components/states/states.component';
 
 
 const appRoutes:Routes=[
   {path:'navbar',component:NavbarComponent},
   {path:  '', redirectTo: '/navbar', pathMatch: 'full'},
   {path:'login',component:LoginComponent},
+  {path:'states',component:StatesComponent},
   
   
 ];
@@ -28,7 +30,8 @@ enableProdMode();
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    StatesComponent
   ],
   imports: [
     BrowserModule,

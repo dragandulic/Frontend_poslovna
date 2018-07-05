@@ -1,12 +1,23 @@
 <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" [routerLink]="['']">Booking</a>
+        <a class="navbar-brand" [routerLink]="['']">Bank NAME</a>
       </div>
-     
+      <ul class="nav navbar-nav">
+            <li class="zoom"><a href="#">Pocetna</a></li>
+            <li class="zoom"><a href="#">Drzave</a></li>
+            <li class="zoom"><a href="#">Gradovi</a></li>
+            <li class="zoom"><a href="#">Pravna lica</a></li>
+            <li class="zoom"><a href="#">Fizicka lica</a></li>
+            <li class="zoom"><a href="#">Racuni</a></li>
+            <li class="zoom"><a href="#">Valute</a></li>
+            <li class="zoom"><a href="#">Kursna lista</a></li>
+            <li class="zoom"><a href="#">Delatnosti</a></li>
+            <li class="zoom"><a href="#">Kliring</a></li>
+            <li class="zoom"><a href="#">RTGS</a></li>
+      </ul> 
       <ul class="nav navbar-nav navbar-right">
         <ng-container  *ngIf="user!==null;else elseContent">
-        <li > <a [routerLink]="['profile']" >User profile</a></li>
         <li><a (click)="logout()">Logout</a></li>
         </ng-container>
         <ng-template #elseContent >
