@@ -1,13 +1,15 @@
 
 <div>
     <div align="center"><img src="http://jshomes.in/images/login.jpg" alt="login" style="width:370px;height:190px;"></div>
+   
     <div class="login-page">
+        <div *ngIf=error style="background: rgb(255, 0, 0); font-size: 20px;">Invalid username or password</div>
         <div class="form">
           <form class="login-form money">
             <label>Email:</label>
-            <input class="visibilityHidden" type="text" placeholder="username" [(ngModel)]="user1.email" name="email" #email1 required/>
+            <input class="visibilityHidden" type="text" placeholder="username" [(ngModel)]="user.email" name="email" #email1 required/>
             <label>Password:</label>
-            <input class="visibilityHidden" type="password" placeholder="password" [(ngModel)]="user1.password" name="password" #password1 required/>
+            <input class="visibilityHidden" type="password" placeholder="password" [(ngModel)]="user.password" name="password" #password1 required/>
             <input id="greenbtn" class="submit font-weight-bold" type="submit" value="LOGIN" (click)="login()" email1.value='' password1.value=''>
             <button   (click)="registration()" class="message">Not registered?  <a >Create an account</a></button>
           </form>

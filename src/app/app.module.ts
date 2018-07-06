@@ -13,8 +13,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { StatesComponent } from './components/states/states.component';
 import { StatesService } from './services/states/states.service';
+import { LoginService } from './services/login/login.service';
+import {Ng2Webstorage} from 'ngx-webstorage';
+import { IndividualComponent } from './components/individual/individual.component';
 
-
+/*
 const appRoutes:Routes=[
   {path:'navbar',component:NavbarComponent,
   children:[
@@ -27,7 +30,7 @@ const appRoutes:Routes=[
   
 ];
   
-  
+  */
 
 enableProdMode();
 @NgModule({
@@ -35,19 +38,22 @@ enableProdMode();
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    StatesComponent
+    StatesComponent,
+    IndividualComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+   // RouterModule.forRoot(appRoutes),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-  /*  MatListModule,
     Ng2Webstorage,
+  /*  MatListModule,
+    
     ReactiveFormsModule*/
   ],
-  providers: [StatesService],
+  
+  providers: [LoginService,StatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
