@@ -12,13 +12,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { StatesComponent } from './components/states/states.component';
+import { StatesService } from './services/states/states.service';
 
 
 const appRoutes:Routes=[
-  {path:'navbar',component:NavbarComponent},
-  {path:  '', redirectTo: '/navbar', pathMatch: 'full'},
-  {path:'login',component:LoginComponent},
-  {path:'states',component:StatesComponent},
+  {path:'navbar',component:NavbarComponent,
+  children:[
+    {path:'login',component:LoginComponent},
+    {path:'country',component:StatesComponent},
+  ]},
+  
+  
   
   
 ];
@@ -43,7 +47,7 @@ enableProdMode();
     Ng2Webstorage,
     ReactiveFormsModule*/
   ],
-  providers: [],
+  providers: [StatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

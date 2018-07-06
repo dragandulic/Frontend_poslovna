@@ -11,12 +11,19 @@
               <th>Akcije<span class="glyphicon glyphicon-flash"></span></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody *ngFor="let country of countries">
             <tr>
-              <td>oznk</td>
-              <td>nzv</td>
+              <td>{{country.code}}</td>
+              <td>{{country.name}}</td>
               <td><span id="zoom" class="glyphicon glyphicon-pencil"></span><span id="zoom" class="glyphicon glyphicon-trash"></span></td>
             </tr>
+
+
+
           </tbody>
         </table>
       </div>
+
+
+
+      
