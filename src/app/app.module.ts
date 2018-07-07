@@ -16,6 +16,7 @@ import { StatesService } from './services/states/states.service';
 import { LoginService } from './services/login/login.service';
 import {Ng2Webstorage} from 'ngx-webstorage';
 import { IndividualComponent } from './components/individual/individual.component';
+import { IndividualService } from './services/individual/individual.service';
 
 /*
 const appRoutes:Routes=[
@@ -53,7 +54,7 @@ enableProdMode();
     ReactiveFormsModule*/
   ],
   
-  providers: [LoginService,StatesService],
+  providers: [LoginService,StatesService,IndividualService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

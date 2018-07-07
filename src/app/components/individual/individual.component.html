@@ -1,3 +1,33 @@
-<p>
-  individual works!
-</p>
+<div class="container">
+  <div class="row center">
+      <button type="button" class="btn btn-info "><p class="btnTxt"><strong>Add individual</strong></p></button>
+     
+  </div>          
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>JMBG</th>
+            <th>Phone number</th>
+            <th>Action<span class="glyphicon glyphicon-flash"></span></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let indi of individuals">
+          <tr>
+            <td>{{indi.name}}</td>
+            <td>{{indi.surname}}</td>
+            <td>{{indi.email}}</td>
+            <td>{{indi.address}}</td>
+            <td>{{indi.jmbg}}</td>
+            <td>{{indi.phonenumber}}</td>
+            <td><span id="zoom" class="glyphicon glyphicon-pencil"></span><span id="zoom" class="glyphicon glyphicon-trash"></span></td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
