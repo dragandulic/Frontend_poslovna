@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row center">
-        <button type="button" class="btn btn-info btnBG"><p class="btnTxt"><strong>Dodaj drzavu</strong></p></button>
+        <button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal" ><p class="btnTxt"><strong>Dodaj drzavu</strong></p></button>
         <button type="button" class="btn btn-info btn2BG "><p class="btnTxt"><strong>Prikazi gradove</strong></p></button>
     </div>          
         <table class="table table-striped">
@@ -15,7 +15,7 @@
             <tr>
               <td>{{country.code}}</td>
               <td>{{country.name}}</td>
-              <td><span id="zoom" class="glyphicon glyphicon-pencil"></span><span id="zoom" class="glyphicon glyphicon-trash"></span></td>
+              <td><span id="zoom" (click)="search(country.id)" data-toggle="modal" data-target="#myModal1"      class="glyphicon glyphicon-pencil">&nbsp;</span><span id="zoom" (click)="delete(country.id)" class="glyphicon glyphicon-trash"></span></td>
             </tr>
 
 
@@ -25,5 +25,79 @@
       </div>
 
 
+      <div class="modal" tabindex="-1" id="myModal" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add country</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                   
+                      <label class="col-sm-4">Name:</label>
+                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCountry.name">         
+                   
+                  </div>
+                  <br>
+                  <div class="row">
+                   
+                      <label class="col-sm-4">Code:</label>
+                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCountry.code">         
+                   
+                  </div>
+
+
+              </div>
+                  
+       
+          
+              <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="modal" tabindex="-1" id="myModal1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit country</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                   
+                      <label class="col-sm-4">Name:</label>
+                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCountry.name">         
+                   
+                  </div>
+                  <br>
+                  <div class="row">
+                   
+                      <label class="col-sm-4">Code:</label>
+                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCountry.code">         
+                   
+                  </div>
+
+
+              </div>
+                  
+       
+          
+              <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary" (click)="edit()"  data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+         </div>
+      </div>
 
       
