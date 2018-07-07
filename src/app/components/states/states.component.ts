@@ -12,6 +12,10 @@ import { state } from '../../state';
 export class StatesComponent implements OnInit {
 
   countries: state[];
+  deleteCountry: state;
+  newCountry: any={};
+  editCountry: any={};
+  editId: any;
 
   constructor(private statesService: StatesService) { }
 
@@ -20,6 +24,40 @@ export class StatesComponent implements OnInit {
     this.statesService.getCountries()
     .subscribe(data => this.countries=data);
  
+  }
+
+  search(id){
+    this.editId=id;
+    this.statesService.searchCountry(id)
+    .subscribe(data => this.editCountry=data);
+  }
+
+  edit(){
+
+    this.statesService.editCountry(this.editId,this.editCountry)
+    .subscribe(data => {this.editCountry=data;
+    this.statesService.getCountries()
+    .subscribe(data => this.countries=data);
+    });
+  }
+
+  delete(id){
+       
+    this.statesService.deleteCountry(id).toPromise()
+      .then(data => {
+        this.countries = this.countries.filter(el => el.id != id);
+
+      })
+  }
+
+  add(){
+
+    this.statesService.addCountry(this.newCountry).toPromise()
+    .then(data => {this.newCountry=data;
+    this.statesService.getCountries()
+    .subscribe(data => this.countries=data);
+    
+    });
   }
 
 }

@@ -23,4 +23,28 @@ export class StatesService {
 
   }
 
+  deleteCountry(id): Observable<any>{
+
+    return this.http.delete<any>('http://localhost:8090/countries/deleteCountry/'+id);
+
+  }
+
+  addCountry(country): Observable<any>{
+
+    return this.http.post<any>('http://localhost:8090/countries/addCountry', country, httpOptions);
+
+  }
+
+  searchCountry(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8090/countries/getCountry2/'+id);
+
+  }
+
+  editCountry(id,country): Observable<any> {
+
+    return this.http.put<any>('http://localhost:8090/countries/editCountry/'+id, country, httpOptions);
+
+  }
+
 }
