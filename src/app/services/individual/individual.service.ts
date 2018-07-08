@@ -28,4 +28,10 @@ export class IndividualService {
   }
 
 
+  deleteIndividual(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8090/individual/deleteindividual/' + id);
+
+  }
+
 }
