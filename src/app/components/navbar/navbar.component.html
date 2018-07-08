@@ -5,10 +5,11 @@
       </div>
       <ul class="nav navbar-nav">
             <li class="zoom"><a href="#">Pocetna</a></li>
-            <li class="zoom"><a onclick="location.href='/navbar/states'">Drzave</a></li>
+            <li class="zoom"><a [routerLink]="['states']" style='text-decoration:none;'>States</a></li>
             <li class="zoom"><a href="#">Gradovi</a></li>
             <li class="zoom"><a href="#">Pravna lica</a></li>
-            <li class="zoom"><a onclick="location.href='/navbar/individual'">Fizicka lica</a></li>
+            <li class="zoom"><a [routerLink]="['individual']" style='text-decoration:none;'>Individual</a></li>
+            <!--<a onclick="location.href='/navbar/individual'">Fizicka lica</a>-->
             <li class="zoom"><a href="#">Racuni</a></li>
             <li class="zoom"><a href="#">Valute</a></li>
             <li class="zoom"><a href="#">Kursna lista</a></li>

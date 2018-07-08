@@ -23,7 +23,7 @@
             <td>{{indi.address}}</td>
             <td>{{indi.jmbg}}</td>
             <td>{{indi.phonenumber}}</td>
-            <td><span id="zoom" class="glyphicon glyphicon-pencil"></span><span id="zoom" class="glyphicon glyphicon-trash"></span></td>
+            <td><span id="zoom" class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteIndividual(indi.id)" class="glyphicon glyphicon-trash"></span></td>
           </tr>
 
 

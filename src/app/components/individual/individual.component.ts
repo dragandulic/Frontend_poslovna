@@ -15,6 +15,7 @@ export class IndividualComponent implements OnInit {
   individual1: Individual;
   bank: Bank;
   individuals: Individual[];
+  retPor: string;
   constructor(private individualservice: IndividualService,private loginservice: LoginService) { }
 
   ngOnInit() {
@@ -33,6 +34,19 @@ export class IndividualComponent implements OnInit {
 
     this.individualservice.addIndividual(this.individual)
     .subscribe(data =>{this.individual1 = data});
+
+  }
+
+  deleteIndividual(id): void{
+    console.log(id);
+    this.individualservice.deleteIndividual(id)
+    .subscribe(data =>{this.retPor = data;
+    
+    },
+    error=>{
+      alert("Unsuccessful deleting");
+    }
+  );
 
   }
 
