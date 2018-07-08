@@ -18,6 +18,7 @@ import { LoginService } from './services/login/login.service';
 import {Ng2Webstorage} from 'ngx-webstorage';
 import { IndividualComponent } from './components/individual/individual.component';
 import { IndividualService } from './services/individual/individual.service';
+import { CurrencyService } from './services/currency/currency.service';
 
 /*
 const appRoutes:Routes=[
@@ -50,13 +51,13 @@ enableProdMode();
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    Ng2Webstorage,
+    Ng2Webstorage
   /*  MatListModule,
     
     ReactiveFormsModule*/
   ],
   
-  providers: [LoginService,StatesService,IndividualService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

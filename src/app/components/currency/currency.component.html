@@ -5,20 +5,21 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Oznaka</th>
+                  <th>Zvanicna sifra</th>
                   <th>Naziv</th>
-                  <th>Naziv</th>
-                  <th>Naziv</th>
+                  <th>Domicilna</th>
+                  <th>Drzava</th>
                   <th>Akcije<span class="glyphicon glyphicon-flash"></span></th>
                 </tr>
               </thead>
-              <tbody> <!--*ngFor="let country of countries"-->
+              <tbody *ngFor="let currency of currencies">
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><span id="zoom" (click)="search(country.id)" data-toggle="modal" data-target="#myModal1"      class="glyphicon glyphicon-pencil">&nbsp;</span><span id="zoom" (click)="delete(country.id)" class="glyphicon glyphicon-trash"></span></td>
+                  <td>{{currency?.password}}</td>
+                  <td>{{currency?.name}}</td>
+                  <td *ngIf="currency?.domicile">Da</td>
+                  <td *ngIf="!currency?.domicile">Ne</td>
+                  <td>{{currency?.country.name}}</td>
+                  <td><span id="zoom" (click)="search(currency.id)" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil">&nbsp;</span><span id="zoom" (click)="deleteCurrency(currency.id)"  class="glyphicon glyphicon-trash"></span></td>
                 </tr>
     
     
@@ -26,3 +27,56 @@
               </tbody>
             </table>
  </div>
+
+ <!--Modal for edit currency-->
+
+ 
+ <div class="modal" tabindex="-1" id="myModal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit currency</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+           
+              <label class="col-sm-4">Zvanicna sifra:</label>
+              <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCurrency.password" >         
+           
+          </div>
+          <br>
+          <div class="row">
+           
+              <label class="col-sm-4">Naziv:</label>
+              <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCurrency.name" >         
+           
+          </div>
+          <br>
+          <div class="row">
+           
+            <label class="col-sm-4">Domicilna:</label>
+            <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCurrency.domicile" >         
+         
+        </div>
+        <br>
+        <div class="row">
+           
+          <label class="col-sm-4">Drzava:</label>
+          <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCurrency.country" >         
+       
+      </div>
+
+      </div>
+          
+
+  
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+ </div>
+</div>
