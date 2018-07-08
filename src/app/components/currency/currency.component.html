@@ -1,0 +1,28 @@
+<div class="container">   
+             <div class="row center">
+                <button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal" ><p class="btnTxt"><strong>Dodaj valutu</strong></p></button>
+            </div>   
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Oznaka</th>
+                  <th>Naziv</th>
+                  <th>Naziv</th>
+                  <th>Naziv</th>
+                  <th>Akcije<span class="glyphicon glyphicon-flash"></span></th>
+                </tr>
+              </thead>
+              <tbody> <!--*ngFor="let country of countries"-->
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span id="zoom" (click)="search(country.id)" data-toggle="modal" data-target="#myModal1"      class="glyphicon glyphicon-pencil">&nbsp;</span><span id="zoom" (click)="delete(country.id)" class="glyphicon glyphicon-trash"></span></td>
+                </tr>
+    
+    
+    
+              </tbody>
+            </table>
+ </div>

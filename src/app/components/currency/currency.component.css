@@ -1,0 +1,28 @@
+#zoom {
+    transition: transform .5s; /* Animation */
+    padding-right: 10px;
+}
+
+#zoom:hover {
+    transform: scale(1.7); /* (170% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    color:green;
+}
+
+.btnBG {
+    height: 100px;
+    width: 130px;
+    background-repeat: no-repeat;
+    background-image: url("https://is3-ssl.mzstatic.com/image/thumb/Purple22/v4/8a/ec/9f/8aec9f78-6b4d-777d-387d-ce0f595e1a12/source/256x256bb.jpg");
+}
+
+.center{
+    padding-left: 40%;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+
+
+.btnTxt {
+    align-content: center;
+    color: black;
+}
