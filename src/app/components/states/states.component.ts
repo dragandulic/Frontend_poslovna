@@ -16,7 +16,6 @@ export class StatesComponent implements OnInit {
   newCountry: any={};
   editCountry: any={};
   editId: any;
-  searchCountry: any={};
 
   constructor(private statesService: StatesService) { }
 
@@ -59,12 +58,6 @@ export class StatesComponent implements OnInit {
     .subscribe(data => this.countries=data);
     
     });
-  }
-
-  search1(){
-
-    this.statesService.searchCountry1(this.searchCountry)
-    .subscribe(data => this.countries = data);
   }
 
 }
