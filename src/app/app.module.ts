@@ -11,6 +11,7 @@ import {enableProdMode} from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { CurrencyComponent } from './components/currency/currency.component';
 import { StatesComponent } from './components/states/states.component';
 import { StatesService } from './services/states/states.service';
 import { LoginService } from './services/login/login.service';
@@ -42,7 +43,8 @@ enableProdMode();
     LoginComponent,
     StatesComponent,
     IndividualComponent,
-    CitiesComponent
+    CitiesComponent,
+    CurrencyComponent
   ],
   imports: [
     BrowserModule,
