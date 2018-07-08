@@ -34,4 +34,19 @@ export class IndividualService {
 
   }
 
+
+  editIndividual(individual: Individual): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8090/individual/editindividual', individual, httpOptions);
+
+
+  }
+
+  findIndividualOfBank(idindi,idbank): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8090/individual/findindividualofbank/' + idindi + "/" + idbank);
+
+  }
+
+
 }

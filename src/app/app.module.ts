@@ -19,6 +19,7 @@ import {Ng2Webstorage} from 'ngx-webstorage';
 import { IndividualComponent } from './components/individual/individual.component';
 import { IndividualService } from './services/individual/individual.service';
 import { CurrencyService } from './services/currency/currency.service';
+import { CitiesComponent } from './components/cities/cities/cities.component';
 
 /*
 const appRoutes:Routes=[
@@ -43,6 +44,7 @@ enableProdMode();
     LoginComponent,
     StatesComponent,
     IndividualComponent,
+    CitiesComponent,
     CurrencyComponent
   ],
   imports: [

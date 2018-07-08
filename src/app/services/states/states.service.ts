@@ -47,4 +47,10 @@ export class StatesService {
 
   }
 
+  searchCountry1(country): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8090/countries/searchCountries', country,  httpOptions);
+
+  }
+
 }
