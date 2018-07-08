@@ -17,6 +17,7 @@ import { LoginService } from './services/login/login.service';
 import {Ng2Webstorage} from 'ngx-webstorage';
 import { IndividualComponent } from './components/individual/individual.component';
 import { IndividualService } from './services/individual/individual.service';
+import { CitiesComponent } from './components/cities/cities/cities.component';
 
 /*
 const appRoutes:Routes=[
@@ -40,7 +41,8 @@ enableProdMode();
     NavbarComponent,
     LoginComponent,
     StatesComponent,
-    IndividualComponent
+    IndividualComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
