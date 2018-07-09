@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row center">
+      <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"  ><p class="btnTxt"><strong>Add individual</strong></p></button>
+  </div>          
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Fax</th>
+            <th>Location</th>
+            <th>Address</th>
+            <th>MBR</th>
+            <th>JMBG</th>
+            <th>Delivery address</th>
+            <th>Phone number</th>
+            <th>Action<span class="glyphicon glyphicon-flash"></span></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let legale of legalentitys">
+          <tr>
+            <td>{{legale.name}}</td>
+            <td>{{legale.shortName}}</td>
+            <td>{{legale.email}}</td>
+            <td>{{legale.fax}}</td>
+            <td>{{legale.location}}</td>
+            <td>{{legale.address}}</td>
+            <td>{{legale.mbr}}</td>
+            <td>{{legale.jmbg}}</td>
+            <td>{{legale.deliveryAddress}}</td>
+            <td>{{legale.phonenumber}}</td>
+            <td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findIndividual(legale.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteIndividual(legale.id)" class="glyphicon glyphicon-trash"></span></td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+    <div class="modal" tabindex="-1" id="myModal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add individual</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <label class="col-sm-4">Name:</label>
+                  <input class="col-sm-5" type="text" name="fivebads" >                        
+              </div>
+              <br>
+
+            
+          </div>
+
+          <div class="modal-footer">  
+            <button type="button" class="btn btn-primary" (click)="addIndividual()"  data-dismiss="modal">Ok</button>
+          </div>
+        </div>
+     </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="modal" tabindex="-1" id="myModaledit" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add individual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row">
+                <label class="col-sm-4">Name:</label>
+                <input class="col-sm-5" type="text" name="fivebads" >                        
+            </div>
+            <br>
+
+            
+        </div>
+
+        <div class="modal-footer">  
+          <button type="button" class="btn btn-primary" (click)="editIndividual()"  data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+   </div>
+</div>

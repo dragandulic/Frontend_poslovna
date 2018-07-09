@@ -20,6 +20,8 @@ import { IndividualComponent } from './components/individual/individual.componen
 import { IndividualService } from './services/individual/individual.service';
 import { CurrencyService } from './services/currency/currency.service';
 import { CitiesComponent } from './components/cities/cities/cities.component';
+import { LegalentityComponent } from './components/legalentity/legalentity.component';
+import { LegalentityService } from './services/legalentity/legalentity.service';
 
 /*
 const appRoutes:Routes=[
@@ -45,7 +47,8 @@ enableProdMode();
     StatesComponent,
     IndividualComponent,
     CitiesComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    LegalentityComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ enableProdMode();
     ReactiveFormsModule*/
   ],
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

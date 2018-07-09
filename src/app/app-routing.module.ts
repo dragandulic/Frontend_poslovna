@@ -6,6 +6,9 @@ import { StatesComponent } from './components/states/states.component';
 import { IndividualComponent } from './components/individual/individual.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 
+import { LegalentityComponent } from './components/legalentity/legalentity.component';
+
+
 const routes: Routes = [
 
   { path: '', component: LoginComponent},
@@ -13,7 +16,8 @@ const routes: Routes = [
     children:[
       {path: 'states', component: StatesComponent},
       {path: 'individual', component: IndividualComponent},
-      {path: 'currency', component: CurrencyComponent}
+      {path: 'currency', component: CurrencyComponent},
+      {path: 'legalentity', component: LegalentityComponent}
     ]
 
   }
