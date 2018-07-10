@@ -56,20 +56,23 @@
           </div>
           <br>
           <div class="row">
-           
-            <label class="col-sm-4">Domicilna:</label>
-            <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCurrency.domicile" >         
+            
+            <label class="col-sm-4">Domicilna:</label>   
+            <select class="form-control col-sm-2" id="sel1"  (change)="editCurrencyDomicile($event.target.value)" >
+                <option [value]="true">Da</option>
+                <option [value]="false">Ne</option>
+            </select>        
          
         </div>
         <br>
         <div class="row">
    
           <label for="sel1" class="col-sm-4">Drzava:</label>
-              <select class="form-control col-sm-2" id="sel1" >
-                <ng-container *ngFor="let country of countries">
-                  <option>{{country?.name}}</option>
-                </ng-container>
-              </select>      
+          <select class="form-control col-sm-2" id="sel1" (change)="clickCountryEdit($event.target.value)" >
+            <ng-container *ngFor="let country of countries">
+              <option [value]="country.name">{{country?.name}}</option>
+            </ng-container>
+          </select>        
        
       </div>
 
@@ -79,7 +82,7 @@
   
       <div class="modal-footer">
         
-        <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-primary" (click)="editC()"  data-dismiss="modal">Edit</button>
       </div>
     </div>
  </div>
@@ -116,16 +119,20 @@
             <div class="row">
              
               <label class="col-sm-4">Domicilna:</label>
-              <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.domicile" >         
+              <select class="form-control col-sm-2" id="sel1"  (change)="addCurrencyDomicile($event.target.value)" >
+                <option [value]="true">Da</option>
+                <option [value]="false">Ne</option>
+            </select>         
            
           </div>
           <br>
           <div class="row">
      
             <label for="sel1" class="col-sm-4">Drzava:</label>
-                <select class="form-control col-sm-2" id="sel1" >
+                <select class="form-control col-sm-2" id="sel1" (change)="clickCountry($event.target.value)" >
+                  <option></option>
                   <ng-container *ngFor="let country of countries">
-                    <option (click)="clickCountry(country)">{{country?.name}}</option>
+                    <option [value]="country.name">{{country?.name}}</option>
                   </ng-container>
                 </select>      
          

@@ -33,8 +33,8 @@ export class CurrencyService {
     return this.http.delete<any>('http://localhost:8090/currency/deleteCurrency/'+id, httpOptions);
   }
 
-  editCurrency (id): Observable<any>{
-    return this.http.put<any>('http://localhost:8090/currency/editCurrency/',+id, httpOptions);
+  editCurrency (id,currency): Observable<any>{
+    return this.http.put<any>('http://localhost:8090/currency/editCurrency/'+id, currency);
   }
 
 }

@@ -1,9 +1,11 @@
+import { state } from "./state";
+
 export class Currency {
 
     id: number;
     password: string;
     name: string;
-    country: any;
+    country: state;
     domicile: boolean;
     
 }

@@ -14,7 +14,8 @@ export class CurrencyComponent implements OnInit {
   currencies:Currency [];
   editCurrency: any={};
   addCurrency: any={};
-  countries: state[];
+  sendAddCurrency: any={};
+  countries:state [];
   private i:number;
   countriesTemp:state;
   len:number;
@@ -69,6 +70,7 @@ export class CurrencyComponent implements OnInit {
   add(){
 
     this.addCurrency.country=this.clickedCountry;
+
       this.currencyService.addCurrency(this.addCurrency).subscribe(data => {
         if(data==null){
           alert("Niste uspesno dodali valutu.")
@@ -88,5 +90,32 @@ export class CurrencyComponent implements OnInit {
 
   clickCountry(clickedCountry){
     this.clickedCountry=clickedCountry;
+  }
+
+  clickCountryEdit(clickedCountry){
+    this.editCurrency.country=clickedCountry;
+  }
+
+
+  editC(){
+    console.log("OVDEEE GLEDAJ!!!!");
+    console.log(this.editCurrency);
+    this.currencyService.editCurrency(this.editCurrency.id,this.editCurrency).subscribe(data => {
+      if(data==null){
+        alert("Niste uspesno izmenili valutu.")
+      }else{
+        alert("Uspesno ste izmenili valutu")
+      }
+      this.getCurrencies();
+    });
+
+  }
+
+  editCurrencyDomicile(value){
+    this.editCurrency.domicile=value;
+  }
+
+  addCurrencyDomicile(value){
+    this.addCurrency.domicile=value;
   }
 }
