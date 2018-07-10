@@ -7,6 +7,7 @@ import { IndividualComponent } from './components/individual/individual.componen
 import { CurrencyComponent } from './components/currency/currency.component';
 
 import { LegalentityComponent } from './components/legalentity/legalentity.component';
+import { ActivityComponent } from './components/activity/activity.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       {path: 'states', component: StatesComponent},
       {path: 'individual', component: IndividualComponent},
       {path: 'currency', component: CurrencyComponent},
-      {path: 'legalentity', component: LegalentityComponent}
+      {path: 'legalentity', component: LegalentityComponent},
+      {path: 'activity', component: ActivityComponent}
     ]
 
   }

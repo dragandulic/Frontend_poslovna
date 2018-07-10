@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row center">
+    <button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal1">
+      <p class="btnTxt">
+        <strong>Dodaj delatnost</strong>
+      </p>
+    </button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Kod</th>
+        <th>Naziv</th>
+        <th>Akcije
+          <span class="glyphicon glyphicon-flash"></span>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let activity of activities">
+      <tr>
+        <td>{{activity?.code}}</td>
+        <td>{{activity?.name}}</td>
+        <td>
+          <span id="zoom" (click)="search(activity.id)" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil">&nbsp;</span>
+          <span id="zoom" (click)="deleteActivity(activity.id)" class="glyphicon glyphicon-trash"></span>
+        </td>
+      </tr>
+
+
+
+    </tbody>
+  </table>
+</div>
+
+<!--Modal for edit currency-->
+
+
+<div class="modal" tabindex="-1" id="myModal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit activity</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <label class="col-sm-4">Kod:</label>
+          <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editActivity.code">
+
+        </div>
+        <br>
+        <div class="row">
+
+          <label class="col-sm-4">Naziv:</label>
+          <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editActivity.name">
+
+        </div>
+
+      </div>
+
+
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" (click)="editA()" data-dismiss="modal">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal for add currency-->
+
+
+<div class="modal" tabindex="-1" id="myModal1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add activity</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <label class="col-sm-4">Kod:</label>
+          <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addActivity.code">
+
+        </div>
+        <br>
+        <div class="row">
+
+          <label class="col-sm-4">Naziv:</label>
+          <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addActivity.name">
+
+        </div>
+        <br>
+    
+
+      </div>
+
+
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" (click)="add()" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
