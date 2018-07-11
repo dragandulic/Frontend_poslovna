@@ -25,6 +25,7 @@ import { LegalentityService } from './services/legalentity/legalentity.service';
 import { CitiesService } from './services/cities/cities.service';
 import { ActivityComponent } from './components/activity/activity.component';
 import { ActivityService } from './services/activity/activity.service';
+import { ExchangeComponent } from './components/exchange/exchange.component';
 
 /*
 const appRoutes:Routes=[
@@ -52,7 +53,8 @@ enableProdMode();
     CitiesComponent,
     CurrencyComponent,
     LegalentityComponent,
-    ActivityComponent
+    ActivityComponent,
+    ExchangeComponent
   ],
   imports: [
     BrowserModule,

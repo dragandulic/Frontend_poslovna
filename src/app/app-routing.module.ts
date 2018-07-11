@@ -9,6 +9,7 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { LegalentityComponent } from './components/legalentity/legalentity.component';
 import { CitiesComponent } from './components/cities/cities.component';
 import { ActivityComponent } from './components/activity/activity.component';
+import { ExchangeComponent } from './components/exchange/exchange.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
       {path: 'currency', component: CurrencyComponent},
       {path: 'legalentity', component: LegalentityComponent},
       {path: 'cities', component: CitiesComponent},
-      {path: 'activity', component: ActivityComponent}
+      {path: 'activity', component: ActivityComponent},
+      {path: 'exchange', component: ExchangeComponent}
     ]
 
   }
