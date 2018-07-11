@@ -13,6 +13,7 @@ export class LegalentityComponent implements OnInit {
 
   legalentity: LegalentityComponent;
   legalentityedit: any={};
+  legalentityadd: any={};
   bank: Bank;
   legalentitys: LegalEntity[];
   constructor(private legalentityservice: LegalentityService, private loginservice: LoginService) { }
@@ -61,6 +62,29 @@ export class LegalentityComponent implements OnInit {
 
     this.legalentityservice.findLegalEntity(idlegal,this.bank.id)
     .subscribe(data =>{this.legalentityedit = data});
+
+
+  }
+
+
+
+  addLegalentity(): void{
+
+    this.bank = this.loginservice.getLocalStore();
+    
+    this.legalentityadd.bankid = this.bank.id;
+
+    this.legalentityservice.addLegalEntity(this.legalentityadd)
+    .subscribe(data =>{this.legalentity = data;
+      
+
+      this.legalentityservice.getAllLegalofBank(this.bank.id)
+      .subscribe(data =>{this.legalentitys = data
+       
+      });
+    
+    });
+
 
 
   }

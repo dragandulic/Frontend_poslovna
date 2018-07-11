@@ -42,4 +42,11 @@ export class LegalentityService {
   }
 
 
+  addLegalEntity(legalentity: LegalEntity): Observable<any>{
+
+    return this.http.post<any>('http://localhost:8090/legalEntity/addLegEntity',legalentity, httpOptions);
+
+  }
+
+
 }

@@ -20,7 +20,7 @@ export class LegalEntity{
 	deliveryAddress: string;
 	bank: Bank;
     bankId: number;
-
+	bankid: number;
 
 
 }
