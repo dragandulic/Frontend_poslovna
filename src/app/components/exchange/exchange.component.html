@@ -14,6 +14,7 @@
  </div>
  
 <div class="container">
+    <button type="button" class="btn btn-info btnKurs" data-toggle="modal" data-target="#myModal"><strong>Dodaj kurs</strong></button>
 	<div class="row">
 		<div class="table-responsive">
             <table id="main-table" class="table exotic-table">
@@ -55,3 +56,113 @@
             </table>
 	</div>
 </div>
+
+
+<!--Add exchange currency rates -->
+
+<div class="modal" tabindex="-1" id="myModal1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dodaj kursnu listu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+             
+                <label class="col-sm-4">Broj kursne liste:</label>
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.password" >         
+             
+            </div>
+            <br>
+            <div class="row">
+             
+                <label class="col-sm-4">Primenjuje se od:</label>
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+             
+            </div>
+            <br>
+  
+        </div>
+            
+  
+    
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+   </div>
+  </div>
+
+
+  <!--Add currency value -->
+ <div class="modal" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dodaj kurs u valuti</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+             
+                <label class="col-sm-4">Osnovna valuta:</label>
+                <select class="form-control col-sm-2" id="sel1" (change)="clickCountry($event.target.value)" >
+                    <option></option>
+                    <ng-container *ngFor="let country of countries">
+                      <option [value]="country.name">{{country?.name}}</option>
+                    </ng-container>
+                  </select>          
+             
+            </div>
+            <br>
+            <div class="row">
+             
+                <label class="col-sm-4">Prema valuti:</label>
+                <select class="form-control col-sm-2" id="sel1" (change)="clickCountry($event.target.value)" >
+                    <option></option>
+                    <ng-container *ngFor="let country of countries">
+                      <option [value]="country.name">{{country?.name}}</option>
+                    </ng-container>
+                  </select>           
+             
+            </div>
+            <br>
+            <div class="row">
+             
+                <label class="col-sm-4">Kupovni kurs:</label>
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.password" >         
+             
+            </div>
+            <br>
+            <div class="row">
+             
+                <label class="col-sm-4">Srednji kurs:</label>
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+             
+            </div>
+            <br>
+            <div class="row">
+             
+                <label class="col-sm-4">Prodajni kurs:</label>
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+             
+            </div>
+          <br>
+  
+        </div>
+            
+  
+    
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+   </div>
+  </div>
