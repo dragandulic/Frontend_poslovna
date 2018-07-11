@@ -7,7 +7,7 @@ export class city{
     code: string;
     postNum: string;
     country: state;
-    
+    countryS: string;
 
 
 }

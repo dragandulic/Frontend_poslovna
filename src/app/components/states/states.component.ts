@@ -12,7 +12,7 @@ import { state } from '../../state';
 export class StatesComponent implements OnInit {
 
   countries: state[];
-  deleteCountry: state;
+  deleteCountry1: state;
   newCountry: any={};
   editCountry: any={};
   editId: any;
@@ -43,12 +43,12 @@ export class StatesComponent implements OnInit {
   }
 
   delete(id){
-       
-    this.statesService.deleteCountry(id).toPromise()
-      .then(data => {
-        this.countries = this.countries.filter(el => el.id != id);
-
-      })
+    
+    this.statesService.deleteCountry(id)
+    .subscribe(data => {this.deleteCountry1=data;
+    this.statesService.getCountries()
+    .subscribe(data => this.countries=data);    
+    }); 
   }
 
   add(){

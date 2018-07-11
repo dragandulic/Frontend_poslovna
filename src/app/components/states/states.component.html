@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row center">
         <button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal" ><p class="btnTxt"><strong>Dodaj drzavu</strong></p></button>
-        <button type="button" class="btn btn-info btn2BG "><p class="btnTxt"><strong>Prikazi gradove</strong></p></button>
+        <!--<button type="button" class="btn btn-info btn2BG "><p class="btnTxt"><strong>Prikazi gradove</strong></p></button>-->
     </div>          
         <table class="table table-striped">
-          <caption class="caption">Countries
+          <caption class="caption">Drzave
               <span id="zoom" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal2">&nbsp;</span>
           </caption>
           <thead>
@@ -32,7 +32,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Add country</h5>
+                <h5 class="modal-title">Dodaj drzavu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -40,14 +40,14 @@
               <div class="modal-body">
                   <div class="row">
                    
-                      <label class="col-sm-4">Name:</label>
+                      <label class="col-sm-4">Naziv:</label>
                       <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCountry.name">         
                    
                   </div>
                   <br>
                   <div class="row">
                    
-                      <label class="col-sm-4">Code:</label>
+                      <label class="col-sm-4">Oznaka:</label>
                       <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCountry.code">         
                    
                   </div>
@@ -70,7 +70,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Edit country</h5>
+                <h5 class="modal-title">Izmeni drzavu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -78,14 +78,14 @@
               <div class="modal-body">
                   <div class="row">
                    
-                      <label class="col-sm-4">Name:</label>
+                      <label class="col-sm-4">Naziv:</label>
                       <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCountry.name">         
                    
                   </div>
                   <br>
                   <div class="row">
                    
-                      <label class="col-sm-4">Code:</label>
+                      <label class="col-sm-4">Oznaka:</label>
                       <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCountry.code">         
                    
                   </div>
@@ -110,7 +110,7 @@
                    <div class="modal-dialog" role="document">
                       <div class="modal-content">
                        <div class="modal-header">
-                         <h5 class="modal-title">Search</h5>
+                         <h5 class="modal-title">Pretraga</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                            <span aria-hidden="true">&times;</span>
                           </button>
@@ -118,14 +118,14 @@
                         <div class="modal-body">
                             <div class="row">
                              
-                                <label class="col-sm-4">Name:</label>
+                                <label class="col-sm-4">Naziv:</label>
                                 <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCountry.name">         
                              
                             </div>
                             <br>
                             <div class="row">
                             
-                                <label class="col-sm-4">Code:</label>
+                                <label class="col-sm-4">Oznaka:</label>
                                 <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCountry.code">         
                              
                             </div>
