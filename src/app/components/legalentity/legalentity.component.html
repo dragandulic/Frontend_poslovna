@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row center">
-      <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"  ><p class="btnTxt"><strong>Add individual</strong></p></button>
+      <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"  ><p class="btnTxt"><strong>Add legal entity</strong></p></button>
   </div>          
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Surname</th>
+            <th>Short name</th>
             <th>Email</th>
             <th>Fax</th>
             <th>Location</th>
@@ -30,7 +30,7 @@
             <td>{{legale.jmbg}}</td>
             <td>{{legale.deliveryAddress}}</td>
             <td>{{legale.phonenumber}}</td>
-            <td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findIndividual(legale.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteIndividual(legale.id)" class="glyphicon glyphicon-trash"></span></td>
+            <td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findlegalentity(legale.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteLegalEntity(legale.id)" class="glyphicon glyphicon-trash"></span></td>
           </tr>
 
 
@@ -53,17 +53,73 @@
             </button>
           </div>
           <div class="modal-body">
-              <div class="row">
-                  <label class="col-sm-4">Name:</label>
-                  <input class="col-sm-5" type="text" name="fivebads" >                        
-              </div>
-              <br>
+            <div class="row">
+              <label class="col-sm-4">Name:</label>
+              <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.name" >                        
+          </div>
+          <br>
+  
+        <div class="row">
+            <label class="col-sm-4">Short name:</label>
+            <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.shortName" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">Email:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.email" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">Fax:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.fax" >                        
+        </div>
+        <br>
+        
+        <div class="row">
+          <label class="col-sm-4">Location:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.location" >                        
+        </div>  
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">Address:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.address" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">MBR:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.mbr" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">JMBG:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.jmbg" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">Delivery address:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.deliveryAddress" >                        
+        </div>
+        <br>
+  
+        <div class="row">
+          <label class="col-sm-4">Phone number:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.phonenumber" >                        
+        </div>
+        <br>
 
-            
+
+
+
           </div>
 
           <div class="modal-footer">  
-            <button type="button" class="btn btn-primary" (click)="addIndividual()"  data-dismiss="modal">Ok</button>
+            <button type="button" class="btn btn-primary" (click)="addLegalentity()"  data-dismiss="modal">Ok</button>
           </div>
         </div>
      </div>
@@ -86,17 +142,73 @@
         </div>
         <div class="modal-body">
           
-          <div class="row">
-                <label class="col-sm-4">Name:</label>
-                <input class="col-sm-5" type="text" name="fivebads" >                        
-            </div>
-            <br>
+        <div class="row">
+            <label class="col-sm-4">Name:</label>
+            <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.name" >                        
+        </div>
+        <br>
+
+      <div class="row">
+          <label class="col-sm-4">Short name:</label>
+          <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.shortName" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">Email:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.email" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">Fax:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.fax" >                        
+      </div>
+      <br>
+      
+      <div class="row">
+        <label class="col-sm-4">Location:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.location" >                        
+      </div>  
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">Address:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.address" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">MBR:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.mbr" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">JMBG:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.jmbg" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">Delivery address:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.deliveryAddress" >                        
+      </div>
+      <br>
+
+      <div class="row">
+        <label class="col-sm-4">Phone number:</label>
+        <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityedit.phonenumber" >                        
+      </div>
+      <br>
+
+
 
             
         </div>
 
         <div class="modal-footer">  
-          <button type="button" class="btn btn-primary" (click)="editIndividual()"  data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-primary" (click)="editLegalEntity()"  data-dismiss="modal">Ok</button>
         </div>
       </div>
    </div>
