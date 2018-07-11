@@ -1,0 +1,85 @@
+.table>thead>tr>th{border-bottom: none;}
+.exotic-table{
+    color:#fff;
+    background: #191919;
+    text-align: center;
+    border: none;
+}
+.exotic-table thead tr{
+    border: 2px #333 outset;
+    text-align: center;
+}
+.exotic-table thead>tr>th{
+    text-align: center;
+}
+.exotic-table tbody{
+    border:2px outset #333;
+    border-top:none
+}
+
+.exotic-table tbody tr{
+    background: #222;
+}
+.exotic-table tbody tr:hover{
+    box-shadow:0 0 20px #000;
+    background:#1a1a1a;
+}
+.exotic-table tbody tr td{
+    border-bottom:2px outset #333;
+}
+.table-responsive{
+    border:none;
+}
+.popover {
+     color:#000
+  }
+a.td-price{
+    color:#fff;
+    border-bottom:1px dotted #ccc
+}
+
+.buy{
+    color:rgb(6, 194, 6);
+    
+}
+
+.middle{
+    color:white;
+}
+
+.sell{
+    color:yellow;
+}
+
+.arrowRight {
+    color:rgb(9, 168, 207);
+}
+
+.btnBG {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn7AlHHsyJ-HKzYFCpVxpMA-gjCJxU968MUmADXZH_TX-AqqWK");
+    border-radius: 100;
+}
+
+.center{
+    padding-left: 44%;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+
+.btnTxt {
+    align-content: center;
+    color: white;
+    padding-top:93%; 
+}
+
+.dropdownBTN{
+    background: #000;
+    width: 100px;
+}
+
+.dropdownDIV{
+    padding-top:2%;
+}
