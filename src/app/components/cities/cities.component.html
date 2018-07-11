@@ -1,0 +1,170 @@
+<div class="container">
+  <div class="row center">
+      
+      <button type="button" class="btn btn-info btn2BG " data-toggle="modal" data-target="#myModal"><p class="btnTxt"><strong>Add city</strong></p></button>
+      <!--<button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal" ><p class="btnTxt"><strong>Dodaj drzavu</strong></p></button>-->
+    </div>          
+      <table class="table table-striped">
+        <caption class="caption">Cities
+              <span id="zoom" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal2">&nbsp;</span>
+        </caption>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Postal number</th>
+            <th>Country</th>
+            <th>Actions<span class="glyphicon glyphicon-flash"></span></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let city of cities">
+          <tr>
+            <td>{{city.code}}</td>
+            <td>{{city.name}}</td>
+            <td>{{city.postNum}}</td>
+            <td>{{city.country.name}}</td>
+            <td><span id="zoom" (click)="search(city.id)" data-toggle="modal" data-target="#myModal1"      class="glyphicon glyphicon-pencil">&nbsp;</span><span id="zoom" (click)="delete(city.id)" class="glyphicon glyphicon-trash"></span></td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="modal" tabindex="-1" id="myModal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add country</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                 
+                    <label class="col-sm-4">Name:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.name">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Code:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.code">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Postal number:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.postNum">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Country:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.country">         
+                 
+                </div>
+
+            </div>
+                
+     
+        
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+            </div>
+          </div>
+       </div>
+    </div>
+
+
+
+    <div class="modal" tabindex="-1" id="myModal1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit country</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                 
+                    <label class="col-sm-4">Name:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCity.name">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Code:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCity.code">         
+                 
+                </div>
+
+
+            </div>
+                
+     
+        
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary" (click)="edit()"  data-dismiss="modal">Ok</button>
+            </div>
+          </div>
+       </div>
+    </div>
+
+
+
+    <div class="modal" tabindex="-1" id="myModal2" role="dialog">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Search</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <div class="modal-body">
+                 <div class="row">
+                  
+                     <label class="col-sm-4">Name:</label>
+                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.name">         
+                  
+                 </div>
+                 <br>
+                 <div class="row">
+                 
+                     <label class="col-sm-4">Code:</label>
+                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.code">         
+                  
+                 </div>
+                 <br>
+                 <div class="row">
+                 
+                    <label class="col-sm-4">Postal number:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.postNum">         
+                 
+                </div>
+
+
+             </div>
+                 
+     
+         
+             <div class="modal-footer">
+              
+               <button type="button" class="btn btn-primary" (click)="search1()"  data-dismiss="modal">Ok</button>
+             </div>
+           </div>
+        </div>
+     </div>
+

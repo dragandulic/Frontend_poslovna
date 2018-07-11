@@ -4,6 +4,9 @@
         <button type="button" class="btn btn-info btn2BG "><p class="btnTxt"><strong>Prikazi gradove</strong></p></button>
     </div>          
         <table class="table table-striped">
+          <caption class="caption">Countries
+              <span id="zoom" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal2">&nbsp;</span>
+          </caption>
           <thead>
             <tr>
               <th>Oznaka</th>
@@ -99,5 +102,45 @@
             </div>
          </div>
       </div>
+
+
+
+
+      <div class="modal" tabindex="-1" id="myModal2" role="dialog">
+                   <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title">Search</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                             
+                                <label class="col-sm-4">Name:</label>
+                                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCountry.name">         
+                             
+                            </div>
+                            <br>
+                            <div class="row">
+                            
+                                <label class="col-sm-4">Code:</label>
+                                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCountry.code">         
+                             
+                            </div>
+          
+          
+                        </div>
+                            
+                
+                    
+                        <div class="modal-footer">
+                         
+                          <button type="button" class="btn btn-primary" (click)="search1()"  data-dismiss="modal">Ok</button>
+                        </div>
+                      </div>
+                   </div>
+                </div>
 
       

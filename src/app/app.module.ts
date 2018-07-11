@@ -19,9 +19,10 @@ import {Ng2Webstorage} from 'ngx-webstorage';
 import { IndividualComponent } from './components/individual/individual.component';
 import { IndividualService } from './services/individual/individual.service';
 import { CurrencyService } from './services/currency/currency.service';
-import { CitiesComponent } from './components/cities/cities/cities.component';
+import { CitiesComponent } from './components/cities/cities.component';
 import { LegalentityComponent } from './components/legalentity/legalentity.component';
 import { LegalentityService } from './services/legalentity/legalentity.service';
+import { CitiesService } from './services/cities/cities.service';
 
 /*
 const appRoutes:Routes=[
@@ -62,7 +63,7 @@ enableProdMode();
     ReactiveFormsModule*/
   ],
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,CitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
