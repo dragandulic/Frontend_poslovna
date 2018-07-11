@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row center">
       
-      <button type="button" class="btn btn-info btn2BG " data-toggle="modal" data-target="#myModal"><p class="btnTxt"><strong>Add city</strong></p></button>
+      <button type="button" class="btn btn-info btn2BG " data-toggle="modal" data-target="#myModal"><p class="btnTxt"><strong>Dodaj grad</strong></p></button>
       <!--<button type="button" class="btn btn-info btnBG" data-toggle="modal" data-target="#myModal" ><p class="btnTxt"><strong>Dodaj drzavu</strong></p></button>-->
     </div>          
       <table class="table table-striped">
-        <caption class="caption">Cities
+        <caption class="caption">Gradovi
               <span id="zoom" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal2">&nbsp;</span>
         </caption>
         <thead>
           <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Postal number</th>
-            <th>Country</th>
-            <th>Actions<span class="glyphicon glyphicon-flash"></span></th>
+            <th>Oznaka</th>
+            <th>Naziv</th>
+            <th>Postanski broj</th>
+            <th>Drzava</th>
+            <th>Akcije<span class="glyphicon glyphicon-flash"></span></th>
           </tr>
         </thead>
         <tbody *ngFor="let city of cities">
@@ -37,7 +37,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Add country</h5>
+              <h5 class="modal-title">Dodaj grad</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -45,29 +45,32 @@
             <div class="modal-body">
                 <div class="row">
                  
-                    <label class="col-sm-4">Name:</label>
+                    <label class="col-sm-4">Naziv:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.name">         
                  
                 </div>
                 <br>
                 <div class="row">
                  
-                    <label class="col-sm-4">Code:</label>
+                    <label class="col-sm-4">Oznaka:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.code">         
                  
                 </div>
                 <br>
                 <div class="row">
                  
-                    <label class="col-sm-4">Postal number:</label>
+                    <label class="col-sm-4">Postanski broj:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.postNum">         
                  
                 </div>
                 <br>
                 <div class="row">
                  
-                    <label class="col-sm-4">Country:</label>
-                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newCity.country">         
+                    <label class="col-sm-4">Drzava:</label>
+                    <select id = "myList1" class="combobox" (change)="selectChangeHandler($event)" >
+                        <option class="option0" value="0" selected hidden>Izaberi drzavu</option>
+                        <option class="option"  *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>               
+                    </select>         
                  
                 </div>
 
@@ -89,7 +92,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Edit country</h5>
+              <h5 class="modal-title">Izmeni grad</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -97,15 +100,32 @@
             <div class="modal-body">
                 <div class="row">
                  
-                    <label class="col-sm-4">Name:</label>
+                    <label class="col-sm-4">Naziv:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCity.name">         
                  
                 </div>
                 <br>
                 <div class="row">
                  
-                    <label class="col-sm-4">Code:</label>
+                    <label class="col-sm-4">Oznaka:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCity.code">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Postanski broj:</label>
+                    <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="editCity.postNum">         
+                 
+                </div>
+                <br>
+                <div class="row">
+                 
+                    <label class="col-sm-4">Drzava:</label>
+                    <select id = "myList1" class="combobox" (change)="selectChangeHandler1($event)" >
+                        <option class="option0" value="0" selected hidden>Izaberi drzavu</option>
+                        <option class="option"  *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>               
+                    </select>         
                  
                 </div>
 
@@ -128,7 +148,7 @@
         <div class="modal-dialog" role="document">
            <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Search</h5>
+              <h5 class="modal-title">Pretraga</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                </button>
@@ -136,21 +156,21 @@
              <div class="modal-body">
                  <div class="row">
                   
-                     <label class="col-sm-4">Name:</label>
+                     <label class="col-sm-4">Naziv:</label>
                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.name">         
                   
                  </div>
                  <br>
                  <div class="row">
                  
-                     <label class="col-sm-4">Code:</label>
+                     <label class="col-sm-4">Oznaka:</label>
                      <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.code">         
                   
                  </div>
                  <br>
                  <div class="row">
                  
-                    <label class="col-sm-4">Postal number:</label>
+                    <label class="col-sm-4">Postanski broj:</label>
                     <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="searchCity.postNum">         
                  
                 </div>
@@ -168,3 +188,10 @@
         </div>
      </div>
 
+
+
+     <div class="row">
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+      </div>
