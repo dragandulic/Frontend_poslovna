@@ -27,6 +27,9 @@ import { ActivityComponent } from './components/activity/activity.component';
 import { ActivityService } from './services/activity/activity.service';
 import { ExchangeComponent } from './components/exchange/exchange.component';
 
+import { AccountService } from './services/account/account.service';
+import { AccountComponent } from './components/account/account.component';
+
 /*
 const appRoutes:Routes=[
   {path:'navbar',component:NavbarComponent,
@@ -54,7 +57,8 @@ enableProdMode();
     CurrencyComponent,
     LegalentityComponent,
     ActivityComponent,
-    ExchangeComponent
+    ExchangeComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,7 @@ enableProdMode();
   ],
   
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
