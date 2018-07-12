@@ -26,7 +26,7 @@ import { CitiesService } from './services/cities/cities.service';
 import { ActivityComponent } from './components/activity/activity.component';
 import { ActivityService } from './services/activity/activity.service';
 import { ExchangeComponent } from './components/exchange/exchange.component';
-
+import { ExchangeService } from './services/exchange/exchange.service';
 import { AccountService } from './services/account/account.service';
 import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
@@ -34,6 +34,8 @@ import { IsplataComponent } from './components/isplata/isplata.component';
 import { UplataComponent } from './components/uplata/uplata.component';
 import { NaplataComponent } from './components/naplata/naplata.component';
 import { PrenosComponent } from './components/prenos/prenos.component';
+import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
+import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
 
 /*
 const appRoutes:Routes=[
@@ -68,7 +70,9 @@ enableProdMode();
     IsplataComponent,
     UplataComponent,
     NaplataComponent,
-    PrenosComponent
+    PrenosComponent,
+    IndividualaccountComponent,
+    LegalaccountComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,7 @@ enableProdMode();
   ],
   
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

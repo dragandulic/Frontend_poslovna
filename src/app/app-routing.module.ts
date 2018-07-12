@@ -16,6 +16,8 @@ import { IsplataComponent } from './components/isplata/isplata.component';
 import { UplataComponent } from './components/uplata/uplata.component';
 import { NaplataComponent } from './components/naplata/naplata.component';
 import { PrenosComponent } from './components/prenos/prenos.component';
+import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
+import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
 
 
 
@@ -31,7 +33,12 @@ const routes: Routes = [
       {path: 'cities', component: CitiesComponent},
       {path: 'activity', component: ActivityComponent},
       {path: 'exchange', component: ExchangeComponent},
-      {path: 'acount', component: AccountComponent},
+      {path: 'acount', component: AccountComponent, 
+      children:[
+        {path: 'legalaccount', component: LegalaccountComponent},
+        {path: 'individualaccount', component: IndividualaccountComponent}
+      ]
+      },
       {path: 'home', component: HomeComponent,
       children:[
         {path: 'isplata', component: IsplataComponent},

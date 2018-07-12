@@ -1,16 +1,16 @@
 <div class="row rows">
   <div class="col-md-2 btnl">
-    <button type="button" class="btn btn-primary"><strong>Fizicka lica</strong></button>
+    <button type="button" class="btn btn-primary" [routerLink]="['individualaccount']" style='text-decoration:none;'><strong>Fizicka lica</strong></button>
   </div>
   <div class="col-md-2 ">
-    <button type="button" class="btn btn-primary"><strong>Pravna lica</strong></button>
+    <button type="button" class="btn btn-primary" [routerLink]="['legalaccount']" style='text-decoration:none;'><strong>Pravno lica</strong></button>
   </div>
 </div>
 
-<div class="container">
 
 
-  
+
+<router-outlet></router-outlet>
 
 
-</div>
+

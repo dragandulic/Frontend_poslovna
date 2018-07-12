@@ -73,14 +73,14 @@
             <div class="row">
              
                 <label class="col-sm-4">Broj kursne liste:</label>
-                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.password" >         
+                <input class="col-sm-2" type="text" name="fivebads"  [(ngModel)]="addExchange.numberExchangeRate"  >         
              
             </div>
             <br>
             <div class="row">
              
                 <label class="col-sm-4">Primenjuje se od:</label>
-                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addExchange.startsOn" >         
              
             </div>
             <br>
@@ -91,7 +91,7 @@
     
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-primary" (click)="addExchangeRate()"  data-dismiss="modal">Ok</button>
         </div>
       </div>
    </div>

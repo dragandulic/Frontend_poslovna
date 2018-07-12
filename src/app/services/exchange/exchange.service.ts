@@ -16,4 +16,9 @@ export class ExchangeService {
 
   constructor(private http: HttpClient) { }
 
+   addExchangeRates(exchangeRate:any): Observable<any>{
+    return this.http.post<any>('http://localhost:8090/exchangerate/newExchangeRate', exchangeRate, httpOptions);
+  }
+
+
 }
