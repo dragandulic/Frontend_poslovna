@@ -31,6 +31,9 @@ import { AccountService } from './services/account/account.service';
 import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { IsplataComponent } from './components/isplata/isplata.component';
+import { UplataComponent } from './components/uplata/uplata.component';
+import { NaplataComponent } from './components/naplata/naplata.component';
+import { PrenosComponent } from './components/prenos/prenos.component';
 import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
 import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
 
@@ -65,6 +68,9 @@ enableProdMode();
     AccountComponent,
     HomeComponent,
     IsplataComponent,
+    UplataComponent,
+    NaplataComponent,
+    PrenosComponent,
     IndividualaccountComponent,
     LegalaccountComponent
   ],
