@@ -1,3 +1,39 @@
-<p>
-  individualaccount works!
-</p>
+<div class="container">
+  <div class="row center">
+     <!-- <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"  ><p class="btnTxt"><strong>Add legal entity</strong></p></button>-->
+  </div>          
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Short name</th>
+            <th>Email</th>
+            <th>Fax</th>
+            <th>Location</th>
+            <th>Address</th>
+            <th>MBR</th>
+            <th>JMBG</th>
+            <th>Delivery address</th>
+            <th>Phone number</th>
+            <th>Action<span class="glyphicon glyphicon-flash"></span></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let legale of legalentitys">
+          <tr>
+            <td>{{legale.name}}</td>
+            <td>{{legale.shortName}}</td>
+            <td>{{legale.email}}</td>
+            <td>{{legale.fax}}</td>
+            <td>{{legale.location}}</td>
+            <td>{{legale.address}}</td>
+            <td>{{legale.mbr}}</td>
+            <td>{{legale.jmbg}}</td>
+            <td>{{legale.deliveryAddress}}</td>
+            <td>{{legale.phonenumber}}</td>
+            <td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findlegalentity(legale.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteLegalEntity(legale.id)" class="glyphicon glyphicon-trash"></span></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
