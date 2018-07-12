@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -14,25 +15,26 @@ export class HomeComponent implements OnInit {
   nalogZaPrenos= false;
 
 
-  constructor() { }
+  constructor(protected route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
   uplata(){
-    
+    this.router.navigateByUrl('/navbar/home/uplata/undefined');
   }
 
   isplata(){
-    this.nalogZaIsplatu=true;
+    this.router.navigateByUrl('/navbar/home/isplata/undefined');
+    
   }
 
   naplata(){
-    this.nalogZaNaplatu=true;
+    this.router.navigateByUrl('/navbar/home/naplata/undefined');
   }
 
   prenos(){
-    this.nalogZaPrenos=true;
+    this.router.navigateByUrl('/navbar/home/prenos/undefined');
   }
 
 }

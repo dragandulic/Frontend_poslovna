@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import { AnalysisService } from '../../services/analysis/analysis.service';
 
 @Component({
   selector: 'app-isplata',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IsplataComponent implements OnInit {
 
-  constructor() { }
+  isplata: any={};
+  valuta: string;
+  racun: string;
+
+  constructor(protected route: ActivatedRoute, private router: Router, private analysisService: AnalysisService) { }
 
   ngOnInit() {
+    if (this.route.snapshot.params.type === 'undefined') {
+
+    } else {
+      
+      const type = this.route.snapshot.params.type;
+      this.analysisService.getPaymentCheck(type)
+      .subscribe(data=> {this.isplata=data;
+        this.valuta=data.paymentCurrency.password;
+        this.racun=data.debtorAccount.accountnum;
+        this.isplata.code=140;
+      });
+      
+    }
+    
+  }
+
+  load1(){
+    this.router.navigateByUrl('navbar/home/isplata/nalog_za_isplatu_1');
+    location.reload();
+  }
+
+  load2(){
+    this.router.navigateByUrl('navbar/home/isplata/nalog_za_isplatu_2');
+    location.reload();
   }
 
 }

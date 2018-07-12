@@ -1,57 +1,86 @@
 
 
-<div class="div">
-  <form >
-    <h2 style="margin-left: 20px;margin-bottom: 20px">Nalog za isplatu :</h2>
-    <div class="form-group row" style="display: inline-block;margin-left: 20px">
-
-      <label>Isplatilac :</label>
-      <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
-
-      <label>Svrha isplate :</label>
-      <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
-
-      <label>Primalac :</label>
-      <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
-
-
-      <label>Sifra placanja :</label>
-      <input style="width: 150px;" class="form-control margin"  disabled="true">
-
-
-      <label style="margin-top: 5px">Valuta :</label>
-      <input style="width: 150px;" class="form-control margin"  disabled="true">
-
-
-      <label style="margin-top: 5px">Iznos :</label>
-      <input style="width: 420px" class="form-control margin"  disabled="true">
-
-
-      <br>
-      <br>
-
-
-      <label>Racun isplatioca :</label>
-      <input style="width: 420px" class="form-control margin"  disabled="true">
-
-
-      <label style="margin-top: 5px">Model :</label>
-      <input style="width: 150px;" class="form-control margin"  disabled="true">
-
-      <label style="margin-top: 5px;">Poziv na broj(zaduzenje) :</label>
-      <input style="width: 420px;" class="form-control margin"  disabled="true">
-
-
-      <br>
-      <br>
-
-      
-             
-      <div style="text-align: center;margin-top: 20px">
-        <button class="btn btn-success" style="height: 50px;width: 100%; border-radius: 12px;margin-bottom: 20px"
-                >Potvrdi
-        </button>
-      </div>
+<div class="row">
+    <div class="col-md-4 tabela" >
+        <table style="width: 30%">
+          <caption style="font-size: 0.5cm;">Nalozi :</caption>
+            <tr style=" height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_isplatu_1.xml</th>
+              <th (click)="load1()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+            <tr style=" border: 1px solid #4d94ff;height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_isplatu_2.xml</th>
+              <th (click)="load2()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+          </table>
     </div>
-  </form>
-</div>
+    <div class="col-md-4 nalog" >
+        
+            <h2 style="margin-left: 20px;margin-bottom: 20px">Nalog za isplatu :</h2>
+            <div class="form-group row" style="display: inline-block;margin-left: 20px">
+        
+              <label>Isplatilac :</label>
+              <input style="width: 420px;height: 35px" [(ngModel)]="isplata.debtorOrderer" class="form-control margin"  disabled="true">
+        
+              <label>Svrha isplate :</label>
+              <input style="width: 420px;height: 35px" [(ngModel)]="isplata.purposeOfPayment" class="form-control margin"  disabled="true">
+        
+              <label>Primalac :</label>
+              <input style="width: 420px;height: 35px" [(ngModel)]="isplata.creditorReceiver" class="form-control margin"  disabled="true">
+        
+        
+              <label>Sifra placanja :</label>
+              <input style="width: 150px;" [(ngModel)]="isplata.code" class="form-control margin"  disabled="true">
+        
+        
+              <label style="margin-top: 5px">Valuta :</label>
+              <input style="width: 150px;" [(ngModel)]="valuta" class="form-control margin"  disabled="true">
+        
+        
+              <label style="margin-top: 5px">Iznos :</label>
+              <input style="width: 420px" [(ngModel)]="isplata.amount" class="form-control margin"  disabled="true">
+        
+        
+              <br>
+              <br>
+              
+        
+              <label>Racun isplatioca :</label>
+              <input style="width: 420px" [(ngModel)]="racun" class="form-control margin"  disabled="true">
+        
+        
+              <label style="margin-top: 5px">Model :</label>
+              <input style="width: 150px;" [(ngModel)]="isplata.modelOfIndebtedness" class="form-control margin"  disabled="true">
+        
+              <label style="margin-top: 5px;">Poziv na broj(zaduzenje) :</label>
+              <input style="width: 420px;" [(ngModel)]="isplata.referenceNumberOfIndebtedness" class="form-control margin"  disabled="true">
+        
+        
+              <br>
+              <br>
+        
+              
+                     
+              <div style="text-align: center;margin-top: 20px">
+                <button class="btn btn-success" style="height: 50px;width: 100%; border-radius: 12px;margin-bottom: 20px"
+                        >Potvrdi
+                </button>
+              </div>
+            </div>
+          
+
+
+
+
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+
+
+
+
