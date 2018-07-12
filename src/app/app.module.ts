@@ -36,6 +36,7 @@ import { NaplataComponent } from './components/naplata/naplata.component';
 import { PrenosComponent } from './components/prenos/prenos.component';
 import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
 import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
+import { AnalysisService } from './services/analysis/analysis.service';
 
 /*
 const appRoutes:Routes=[
@@ -87,7 +88,7 @@ enableProdMode();
   ],
   
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService,AnalysisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -41,10 +41,10 @@ const routes: Routes = [
       },
       {path: 'home', component: HomeComponent,
       children:[
-        {path: 'isplata', component: IsplataComponent},
-        {path: 'uplata', component: UplataComponent},
-        {path: 'naplata', component: NaplataComponent},
-        {path: 'prenos', component: PrenosComponent}
+        {path: 'isplata/:type', component: IsplataComponent},
+        {path: 'uplata/:type', component: UplataComponent},
+        {path: 'naplata/:type', component: NaplataComponent},
+        {path: 'prenos/:type', component: PrenosComponent}
       ]
     
     }
