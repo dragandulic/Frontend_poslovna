@@ -14,7 +14,7 @@
                   <br>
                   <br>
                  
-                  <span data-toggle="modal" data-target="#myModaladd" class="navbar-brand glyphicon glyphicon-plus" style="color: white"></span>
+                  <span data-toggle="modal" data-target="#myModaladd" (click)="clean()" class="navbar-brand glyphicon glyphicon-plus" style="color: white"></span>
                   <br>
                   <br>
                   <br>
@@ -108,7 +108,7 @@
                         <label for="">Broj racuna:</label>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" [(ngModel)]="addacc.accountnum" placeholder="bbbbbbbbbbbbb-cc" >
+                        <input type="text" [(ngModel)]="addacc.accountnum" placeholder="bbbbbbbbbbbbb" >
                     </div>
                   </div>
                   <br>
@@ -162,6 +162,9 @@
                                 <input type="text" value={{individualjmbg?.address}} >
                             </div>
                           </div>
+                          <div *ngIf=greska class="row">
+                              <p style="background: rgb(248, 58, 58)">Ne postoji to pravno lice!</p>
+                            </div>
                           <br>
                           
                   

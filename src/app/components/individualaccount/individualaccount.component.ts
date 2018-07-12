@@ -24,6 +24,7 @@ export class IndividualaccountComponent implements OnInit {
   retacc: Account;
   individualaccounts: Account[];
   bank: Bank;
+  greska: boolean;
   constructor(private accountService: AccountService, private loginservice: LoginService, private currencyService: CurrencyService,private individualservice: IndividualService) { }
 
   ngOnInit() {
@@ -95,7 +96,10 @@ export class IndividualaccountComponent implements OnInit {
   
     this.addacc.currencyid =  event.target.value;
   }
-
+  
+  clean(){
+    this.greska = false;
+  }
 
   findindividual(): void{
     
@@ -107,7 +111,11 @@ export class IndividualaccountComponent implements OnInit {
     .subscribe(data => {this.individualjmbg = data;
       this.addacc.individualid = this.individualjmbg.id;
       
-    });
+    },error =>{
+      this.greska=true;
+      }
+    
+  );
 
 
   }

@@ -48,5 +48,12 @@ export class LegalentityService {
 
   }
 
+  findLegalJMBGOfBank(legal: LegalEntity): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8090/legalEntity/findlegaljmbgofbank', legal,httpOptions );
+
+  }
+
+
 
 }

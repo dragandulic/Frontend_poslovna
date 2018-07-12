@@ -20,6 +20,14 @@ export class AccountService {
 
   }
 
+  getAllLegalAccountofbank(idbank): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8090/account/getLegalAccountsOfBank/' + idbank);
+
+
+  }
+
+
   findaccount(findacc): Observable<any>{
     
     return this.http.put<any>('http://localhost:8090/account/findaccount', findacc, httpOptions);
@@ -33,6 +41,11 @@ export class AccountService {
 
   }
 
+  addaccountLegal(addaccount: Account): Observable<any>{
+
+    return this.http.post<any>('http://localhost:8090/account/addlegalaccount', addaccount, httpOptions);
+
+  }
 
 
 }
