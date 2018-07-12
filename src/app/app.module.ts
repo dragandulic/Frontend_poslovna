@@ -26,7 +26,7 @@ import { CitiesService } from './services/cities/cities.service';
 import { ActivityComponent } from './components/activity/activity.component';
 import { ActivityService } from './services/activity/activity.service';
 import { ExchangeComponent } from './components/exchange/exchange.component';
-
+import { ExchangeService } from './services/exchange/exchange.service';
 import { AccountService } from './services/account/account.service';
 import { AccountComponent } from './components/account/account.component';
 
@@ -73,7 +73,7 @@ enableProdMode();
   ],
   
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService],
+  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
