@@ -1,3 +1,170 @@
-<p>
-  legalaccount works!
-</p>
+<div class="row rows">
+    <div class="col-md-1 colorr" style="margin-top: 3cm;">
+          
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-left">
+               
+              <span data-toggle="modal" data-target="#myModalfind" class="navbar-brand glyphicon glyphicon-search" style="color: white"></span>
+              <br>
+              <br>
+              <br>
+             
+              <span data-toggle="modal" data-target="#myModaladd" (click)="clean()" class="navbar-brand glyphicon glyphicon-plus" style="color: white"></span>
+              <br>
+              <br>
+              <br>
+
+              <span  class="navbar-brand glyphicon glyphicon-refresh" (click)="refreslist()" style="color: white"></span>
+              <br>
+              <br>
+              <br>
+
+              <span  class="navbar-brand glyphicon glyphicon-trash"  style="color: white"></span>
+
+            </nav>
+          
+    </div>
+    <div class="col-md-1" style="width: 200px;"></div>
+    <div class="col-md-8" >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Broj racuna</th>
+            <th>Datum otvaranja</th>
+            <th>Valuta</th>
+            <th>Pravno lice</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let legalacc of legalaccounts">
+          <tr>
+            <td>{{legalacc?.accountnum}}</td>
+            <td>{{legalacc?.openingdate}}</td>
+            <td>{{legalacc?.currency.name}}</td>
+            <td>{{legalacc?.legalEntity.name}}</td>
+            
+          </tr>
+
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <div class="modal" tabindex="-1" id="myModalfind" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" style="margin-left: 50px; margin-top: 18px;">Pronadji racun</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-3">
+                  <label for="">Broj racuna:</label>
+              </div>
+              <div class="col-md-6">
+                  <input type="text" [(ngModel)]="findacc.accountnum" placeholder="xxx-bbbbbbbbbbbbb-cc">
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="findaccount()" class="btn btn-primary" data-dismiss="modal">Pronadji</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal" tabindex="-1" id="myModaladd" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" style="margin-left: 50px; margin-top: 18px;">Dodaj racun</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="col-md-4">
+                    <label for="">Broj racuna:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" [(ngModel)]="addacc.accountnum" placeholder="bbbbbbbbbbbbb" >
+                </div>
+              </div>
+              <br>
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Valuta:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <select id="type" (change)="selectChangeHandler($event)" name="type" style="height:26px; width:175px; " class="col-sm-6">
+                            <option class="option0" style="height: 30px;" value="0" selected hidden>Choose ...</option>
+                            <option *ngFor="let currency of currencies" style="height: 30px;" value={{currency.id}}>{{currency?.name}}</option>
+                            
+                        </select>  
+
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label for="">JMBG fizickog lica:</label>
+                      </div>
+                      <div class="col-md-4">
+                          <input type="text" [(ngModel)]="jmbglegal.jmbg">
+                      </div>
+                      <div class="col-md-2">
+                          <button (click)="findlegal()">Pronadji</button>
+                      </div>
+                    </div>
+                    <br>
+                    <!---->
+                    <div *ngIf=legaljmbg?.name  class="row">
+                        <div class="col-md-4">
+                            <label for="">Ime:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value={{legaljmbg?.name}}>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Skraceni naziv:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value={{legaljmbg?.shortName}}>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Adresa:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value={{legaljmbg?.address}} >
+                        </div>
+                      </div>
+                      <div *ngIf=greska class="row">
+                        <p style="background: rgb(248, 58, 58)">Ne postoji to pravno lice!</p>
+                      </div>
+                      <br>
+                      
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="addAccountLegal()" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+            </div>
+          </div>
+        </div>
+      </div>
