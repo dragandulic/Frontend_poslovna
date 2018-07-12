@@ -1,5 +1,6 @@
 import { Individual } from "./individual";
 import { LegalEntity } from "./legalentity";
+import { Currency } from "./currency";
 
 export class Account{
 
@@ -11,6 +12,8 @@ export class Account{
 	individualid: number;
 	legalEntityid: number;
 	bankid: number;
-
+	currency: Currency;
+	individual: Individual;
+	legalEntity: LegalEntity;
 
 }
