@@ -47,6 +47,12 @@ export class IndividualService {
     return this.http.get<any>('http://localhost:8090/individual/findindividualofbank/' + idindi + "/" + idbank);
 
   }
+  
 
+  findIndividualJMBGOfBank(individua: Individual): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8090/individual/findindividualjmbgofbank', individua,httpOptions );
+
+  }
 
 }

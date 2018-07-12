@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Account } from '../../account';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,6 +19,20 @@ export class AccountService {
 
 
   }
+
+  findaccount(findacc): Observable<any>{
+    
+    return this.http.put<any>('http://localhost:8090/account/findaccount', findacc, httpOptions);
+
+  }
+  
+
+  addaccountIndividual(addaccount: Account): Observable<any>{
+
+    return this.http.post<any>('http://localhost:8090/account/addindividualaccount', addaccount, httpOptions);
+
+  }
+
 
 
 }
