@@ -5,17 +5,19 @@
         <button class="btn btn-primary dropdown-toggle dropdownBTN" type="button" data-toggle="dropdown">Izaberi listu
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#">Dinarska</a></li>
-          <li><a href="#">Euro</a></li>
-          <li><a href="#">Dolarska</a></li>
+           <ng-container *ngFor="let exchangeRate of exChangeRates">
+               <li><a (click)="nowExchangeRate(exchangeRate)">{{exchangeRate?.startsOn}}</a></li>
+            </ng-container>
         </ul>
       </div>
  </div> 
  </div>
  
 <div class="container">
-    <button type="button" class="btn btn-info btnKurs" data-toggle="modal" data-target="#myModal"><strong>Dodaj kurs</strong></button>
-	<div class="row">
+    <ng-container *ngIf="btnIf">
+      <button  type="button" class="btn btn-info btnKurs" data-toggle="modal" data-target="#myModal"><strong>Dodaj kurs</strong></button>
+   </ng-container>
+    <div class="row">
 		<div class="table-responsive">
             <table id="main-table" class="table exotic-table">
                 <thead>
@@ -28,30 +30,15 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
+                    <ng-container *ngFor="let currentRate of currentRates">
                     <tr>
-                        <td>1</td>
-                        <td>Dinar <span class="glyphicon glyphicon-arrow-right arrowRight"></span> Euro</td>
-                        <td class="buy">126.70</td>
-                        <td class="middle">120.20</td>
-                        <td class="sell">116.45</td>
+                        <td>{{currentRate?.id}}</td>
+                        <td>{{currentRate?.primary.password}}<span class="glyphicon glyphicon-arrow-right arrowRight"></span> {{currentRate?.changeto.password}}</td>
+                        <td class="buy">{{currentRate?.buying}}</td>
+                        <td class="middle">{{currentRate?.average}}</td>
+                        <td class="sell">{{currentRate?.selling}}</td>
                     </tr>
-
-                    <tr>
-                      <td>2</td>
-                      <td>Dinar <span class="glyphicon glyphicon-arrow-right arrowRight"></span> Funta</td>
-                      <td class="buy">126.70</td>
-                      <td class="middle">120.20</td>
-                      <td class="sell">116.45</td>
-                  </tr>
-
-                  <tr>
-                    <td>3</td>
-                    <td>Dinar <span class="glyphicon glyphicon-arrow-right arrowRight"></span> Dolar</td>
-                    <td class="buy">126.70</td>
-                    <td class="middle">120.20</td>
-                    <td class="sell">116.45</td>
-                </tr>
-                    
+                    </ng-container>
                 </tbody>
             </table>
 	</div>
@@ -98,7 +85,7 @@
   </div>
 
 
-  <!--Add currency value -->
+  <!--Add currency value --> 
  <div class="modal" tabindex="-1" id="myModal" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -112,10 +99,10 @@
             <div class="row">
              
                 <label class="col-sm-4">Osnovna valuta:</label>
-                <select class="form-control col-sm-2" id="sel1" (change)="clickCountry($event.target.value)" >
+                <select class="form-control col-sm-2" id="sel1" (change)="clickCurrencyPrimary($event.target.value)" >
                     <option></option>
-                    <ng-container *ngFor="let country of countries">
-                      <option [value]="country.name">{{country?.name}}</option>
+                    <ng-container *ngFor="let currency of currencies">
+                      <option [value]="currency.name">{{currency?.name}}</option>
                     </ng-container>
                   </select>          
              
@@ -124,10 +111,10 @@
             <div class="row">
              
                 <label class="col-sm-4">Prema valuti:</label>
-                <select class="form-control col-sm-2" id="sel1" (change)="clickCountry($event.target.value)" >
+                <select class="form-control col-sm-2" id="sel1" (change)="clickCurrencyChangeTo($event.target.value)" >
                     <option></option>
-                    <ng-container *ngFor="let country of countries">
-                      <option [value]="country.name">{{country?.name}}</option>
+                    <ng-container *ngFor="let currency of currencies">
+                      <option [value]="currency.name">{{currency?.name}}</option>
                     </ng-container>
                   </select>           
              
@@ -136,21 +123,21 @@
             <div class="row">
              
                 <label class="col-sm-4">Kupovni kurs:</label>
-                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.password" >         
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newRateInCurrency.buying" >         
              
             </div>
             <br>
             <div class="row">
              
                 <label class="col-sm-4">Srednji kurs:</label>
-                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newRateInCurrency.average" >         
              
             </div>
             <br>
             <div class="row">
              
                 <label class="col-sm-4">Prodajni kurs:</label>
-                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="addCurrency.name" >         
+                <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="newRateInCurrency.selling" >         
              
             </div>
           <br>
@@ -161,8 +148,9 @@
     
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-primary" (click)="add()"  data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-primary" (click)="addRateInCurrency()"  data-dismiss="modal">Ok</button>
         </div>
       </div>
    </div>
   </div>
+
