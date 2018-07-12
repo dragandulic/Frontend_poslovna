@@ -29,6 +29,8 @@ import { ExchangeComponent } from './components/exchange/exchange.component';
 import { ExchangeService } from './services/exchange/exchange.service';
 import { AccountService } from './services/account/account.service';
 import { AccountComponent } from './components/account/account.component';
+import { HomeComponent } from './components/home/home.component';
+import { IsplataComponent } from './components/isplata/isplata.component';
 
 /*
 const appRoutes:Routes=[
@@ -58,7 +60,9 @@ enableProdMode();
     LegalentityComponent,
     ActivityComponent,
     ExchangeComponent,
-    AccountComponent
+    AccountComponent,
+    HomeComponent,
+    IsplataComponent
   ],
   imports: [
     BrowserModule,
