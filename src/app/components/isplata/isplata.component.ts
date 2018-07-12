@@ -16,9 +16,14 @@ export class IsplataComponent implements OnInit {
   constructor(protected route: ActivatedRoute, private router: Router, private analysisService: AnalysisService) { }
 
   ngOnInit() {
-    if (this.route.snapshot.params.type === 'undefined') {
+    
+    if (this.route.snapshot.params.type == ':type') {
+      
+    }
+    else if(this.route.snapshot.params.type == 'undefined'){
 
-    } else {
+    }
+    else {
       
       const type = this.route.snapshot.params.type;
       this.analysisService.getPaymentCheck(type)
@@ -40,6 +45,12 @@ export class IsplataComponent implements OnInit {
   load2(){
     this.router.navigateByUrl('navbar/home/isplata/nalog_za_isplatu_2');
     location.reload();
+  }
+
+  confirmClick(){
+    const type = this.route.snapshot.params.type;
+    this.analysisService.savePaymentCheck(type).subscribe();
+
   }
 
 }

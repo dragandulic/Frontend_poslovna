@@ -15,4 +15,8 @@ export class AnalysisService {
     return this.http.get('http://localhost:8090/analysis/payoff/'+name, httpOptions);
   }
 
+  savePaymentCheck(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/save/xml/'+name, httpOptions);
+  }
+
 }
