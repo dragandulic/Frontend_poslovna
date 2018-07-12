@@ -31,6 +31,9 @@ import { AccountService } from './services/account/account.service';
 import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { IsplataComponent } from './components/isplata/isplata.component';
+import { UplataComponent } from './components/uplata/uplata.component';
+import { NaplataComponent } from './components/naplata/naplata.component';
+import { PrenosComponent } from './components/prenos/prenos.component';
 
 /*
 const appRoutes:Routes=[
@@ -62,7 +65,10 @@ enableProdMode();
     ExchangeComponent,
     AccountComponent,
     HomeComponent,
-    IsplataComponent
+    IsplataComponent,
+    UplataComponent,
+    NaplataComponent,
+    PrenosComponent
   ],
   imports: [
     BrowserModule,
