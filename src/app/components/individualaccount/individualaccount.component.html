@@ -4,12 +4,6 @@
       <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"  ><p class="btnTxt"><strong>Add legal entity</strong></p></button>
   </div>   
   -->
-    <div class="row">
-        <div class="col-md-1">
-           
-        </div>
-        
-    </div>
       <div class="row rows">
         <div class="col-md-1 colorr" style="margin-top: 3cm;">
               
@@ -26,7 +20,12 @@
                   <br>
 
                   <span  class="navbar-brand glyphicon glyphicon-refresh" (click)="refreslist()" style="color: white"></span>
-                
+                  <br>
+                  <br>
+                  <br>
+
+                  <span  class="navbar-brand glyphicon glyphicon-trash"  style="color: white"></span>
+
                 </nav>
               
         </div>
@@ -39,7 +38,7 @@
                 <th>Datum otvaranja</th>
                 <th>Valuta</th>
                 <th>Fizicko lice</th>
-                <th>Action<span class="glyphicon glyphicon-flash"></span></th>
+                
               </tr>
             </thead>
             <tbody *ngFor="let indiacc of individualaccounts">
@@ -49,7 +48,7 @@
                 <td>{{indiacc?.currency.name}}</td>
                 <td>{{indiacc?.individual.name}}</td>
                 
-                <td><!--<span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findlegalentity(indiacc.id)"  class="glyphicon glyphicon-pencil"></span>--><span id="zoom" (click)="deleteLegalEntity(indiacc.id)" class="glyphicon glyphicon-trash"></span></td>
+                <!--<td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findlegalentity(indiacc.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteLegalEntity(indiacc.id)" class="glyphicon glyphicon-trash"></span></td>-->
               </tr>
     
     
@@ -77,7 +76,7 @@
                       <label for="">Broj racuna:</label>
                   </div>
                   <div class="col-md-6">
-                      <input type="text" [(ngModel)]="findacc.accountnum">
+                      <input type="text" [(ngModel)]="findacc.accountnum" placeholder="xxx-bbbbbbbbbbbbb-cc">
                   </div>
                 </div>
                 
@@ -109,7 +108,7 @@
                         <label for="">Broj racuna:</label>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" [(ngModel)]="addacc.accountnum" >
+                        <input type="text" [(ngModel)]="addacc.accountnum" placeholder="bbbbbbbbbbbbb-cc" >
                     </div>
                   </div>
                   <br>

@@ -7,6 +7,7 @@ import { Currency } from '../../currency';
 import { IndividualService } from '../../services/individual/individual.service';
 import { IndividualComponent } from '../individual/individual.component';
 import { Individual } from '../../individual';
+import { Account } from '../../account';
 
 @Component({
   selector: 'app-individualaccount',
@@ -69,6 +70,9 @@ export class IndividualaccountComponent implements OnInit {
     this.addacc.bankid = this.bank.id;
     this.accountService.addaccountIndividual(this.addacc)
     .subscribe(data =>{this.retacc = data;
+      if(this.retacc.accountnum==undefined){
+        alert("Broj racuna je zauzet!");
+      }
       this.accountService.getAllIndivicualAccountofbank(this.bank.id)
     .subscribe(data =>{this.individualaccounts = data;
       
