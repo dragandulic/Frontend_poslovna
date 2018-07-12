@@ -20,5 +20,17 @@ export class ExchangeService {
     return this.http.post<any>('http://localhost:8090/exchangerate/newExchangeRate', exchangeRate, httpOptions);
   }
 
+   getExchangeRates(id:any): Observable<any>{
+    return this.http.get<any>('http://localhost:8090/exchangerate/getExchangeRates/'+id, httpOptions);
+  }
+
+  addRate(rate:any): Observable<any>{
+    return this.http.post<any>('http://localhost:8090/rateincurrency/newrateincurrency', rate, httpOptions);
+  }
+
+   getRates(id:any): Observable<any>{
+    return this.http.get<any>('http://localhost:8090/rateincurrency/getChangesInCurrency/'+id, httpOptions);
+  }
+
 
 }
