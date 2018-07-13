@@ -38,7 +38,7 @@ import { IndividualaccountComponent } from './components/individualaccount/indiv
 import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
 import { AnalysisService } from './services/analysis/analysis.service';
 import { ReportComponent } from './components/report/report.component';
-
+import { ReportService } from './services/report/report.service';
 /*
 const appRoutes:Routes=[
   {path:'navbar',component:NavbarComponent,
@@ -90,7 +90,7 @@ enableProdMode();
   ],
   
   
-  providers: [LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService,AnalysisService],
+  providers: [ReportService,LoginService,StatesService,IndividualService,CurrencyService,LegalentityService,ActivityService,CitiesService,AccountService,ExchangeService,AnalysisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
