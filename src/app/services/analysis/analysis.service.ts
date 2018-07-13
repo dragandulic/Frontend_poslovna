@@ -35,4 +35,12 @@ export class AnalysisService {
     return this.http.get('http://localhost:8090/analysis/save/xml-transfer/'+name, httpOptions);
   }
 
+  getUplata(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/xml-order/'+name, httpOptions);
+  }
+
+  saveUplata(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/save/xml-order/'+name, httpOptions);
+  }
+
 }
