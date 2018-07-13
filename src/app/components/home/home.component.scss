@@ -25,17 +25,25 @@
     }
   
     button {
-      border-radius: 12px;
-      height: 50px;
+     // border-radius: 12px;
+      height: 256px;
+      width: 256px;
       font-size: 14px;
+      background-image: url("http://www.iconarchive.com/download/i95360/custom-icon-design/flatastic-5/Sales-by-payment-method.ico");
       background-color: white; /* Green */
       color: black;
-      border: 2px solid #0d52b9;
+      border: 0px solid #0d52b9;
     }
   
     button:hover {
-      background-color: #b3d1ff; /* Green */
+      background-image: url("https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Sales-by-Payment-Method-rep.png");
+      background-color: white; /* Green */
       color: white;
+
     }
   
+    .btnTxt {
+      align-content: center;
+      padding-bottom:57%; 
+  }
   }
