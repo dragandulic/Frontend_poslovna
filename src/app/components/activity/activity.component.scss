@@ -29,6 +29,10 @@
 
 .btnTxt {
     align-content: center;
-    color: black;
+    color: white;
+}
+
+.btnTxt:hover {
+    color: rgb(119, 0, 0);
 }
 
