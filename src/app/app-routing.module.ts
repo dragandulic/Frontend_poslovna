@@ -18,6 +18,7 @@ import { NaplataComponent } from './components/naplata/naplata.component';
 import { PrenosComponent } from './components/prenos/prenos.component';
 import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
 import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
+import { ReportComponent } from './components/report/report.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
       {path: 'currency', component: CurrencyComponent},
       {path: 'legalentity', component: LegalentityComponent},
       {path: 'cities', component: CitiesComponent},
+      {path: 'report', component: ReportComponent},
       {path: 'activity', component: ActivityComponent},
       {path: 'exchange', component: ExchangeComponent},
       {path: 'acount', component: AccountComponent, 

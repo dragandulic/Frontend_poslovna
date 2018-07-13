@@ -37,6 +37,7 @@ import { PrenosComponent } from './components/prenos/prenos.component';
 import { IndividualaccountComponent } from './components/individualaccount/individualaccount.component';
 import { LegalaccountComponent } from './components/legalaccount/legalaccount.component';
 import { AnalysisService } from './services/analysis/analysis.service';
+import { ReportComponent } from './components/report/report.component';
 
 /*
 const appRoutes:Routes=[
@@ -73,7 +74,8 @@ enableProdMode();
     NaplataComponent,
     PrenosComponent,
     IndividualaccountComponent,
-    LegalaccountComponent
+    LegalaccountComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" [routerLink]="['']">Bank NAME</a>
+        <a class="navbar-brand" >{{bank?.name}}</a>
       </div>
       <ul class="nav navbar-nav">
             <li class="zoom"><a [routerLink]="['home']" style='text-decoration:none;'>Pocetna</a></li>
@@ -11,6 +11,7 @@
             <li class="zoom"><a [routerLink]="['individual']" style='text-decoration:none;'>Fizicko lice</a></li>
             <!--<a onclick="location.href='/navbar/individual'">Fizicka lica</a>-->
             <li class="zoom"><a [routerLink]="['acount']" style='text-decoration:none;'>Racuni</a></li>
+            <li class="zoom"><a [routerLink]="['report']">Izvestaji</a></li>
             <li class="zoom"><a [routerLink]="['currency']">Valute</a></li>
             <li class="zoom"><a [routerLink]="['exchange']">Kursna lista</a></li>
             <li class="zoom"><a [routerLink]="['activity']">Delatnosti</a></li>
@@ -19,7 +20,7 @@
       </ul> 
       <ul class="nav navbar-nav navbar-right">
         <ng-container  *ngIf="user!==null;else elseContent">
-        <li><a (click)="logout()">Logout</a></li>
+        <li><a [routerLink]="['']" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Izađi</a></li>
         </ng-container>
         <ng-template #elseContent >
         <li ><a [routerLink]="['registration']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
