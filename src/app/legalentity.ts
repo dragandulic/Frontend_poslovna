@@ -21,6 +21,6 @@ export class LegalEntity{
 	bank: Bank;
     bankId: number;
 	bankid: number;
-
+	activityid: number;
 
 }
