@@ -8,6 +8,7 @@ import { IndividualService } from '../../services/individual/individual.service'
 import { IndividualComponent } from '../individual/individual.component';
 import { Individual } from '../../individual';
 import { Account } from '../../account';
+import { AccountClosure } from '../../accountclosure';
 
 @Component({
   selector: 'app-individualaccount',
@@ -25,6 +26,8 @@ export class IndividualaccountComponent implements OnInit {
   individualaccounts: Account[];
   bank: Bank;
   greska: boolean;
+  accountclosureret: AccountClosure;
+  accountclosureadd: any={};
   constructor(private accountService: AccountService, private loginservice: LoginService, private currencyService: CurrencyService,private individualservice: IndividualService) { }
 
   ngOnInit() {
@@ -117,6 +120,14 @@ export class IndividualaccountComponent implements OnInit {
     
   );
 
+
+  }
+
+
+  deleteaccount(): void{
+
+    this.accountService.accountclosure(this.accountclosureadd)
+    .subscribe(data => {this.accountclosureret = data});
 
   }
 

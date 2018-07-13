@@ -18,7 +18,7 @@
               <br>
               <br>
 
-              <span  class="navbar-brand glyphicon glyphicon-trash"  style="color: white"></span>
+              <span data-toggle="modal" data-target="#myModaldelete" class="navbar-brand glyphicon glyphicon-trash"  style="color: white"></span>
 
             </nav>
           
@@ -163,6 +163,46 @@
             </div>
             <div class="modal-footer">
               <button type="button" (click)="addAccountLegal()" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal" tabindex="-1" id="myModaldelete" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" style="margin-left: 50px; margin-top: 18px;">Gasenje racuna</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                    <label for="">Broj racuna koji se gasi:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" [(ngModel)]="accountclosureadd.accountfrom" placeholder="xxx-bbbbbbbbbbbbb-cc">
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                    <label for="">Broj racuna na koji se prenose sredstva:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" [(ngModel)]="accountclosureadd.accountto" placeholder="xxx-bbbbbbbbbbbbb-cc">
+                </div>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="deleteaccount()" class="btn btn-primary" data-dismiss="modal">Ugasi racun</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
             </div>
           </div>

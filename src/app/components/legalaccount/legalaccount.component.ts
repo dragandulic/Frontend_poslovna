@@ -7,6 +7,7 @@ import { Bank } from '../../Bank';
 import { Currency } from '../../currency';
 import { LegalentityService } from '../../services/legalentity/legalentity.service';
 import { LegalEntity } from '../../legalentity';
+import { AccountClosure } from '../../accountclosure';
 
 @Component({
   selector: 'app-legalaccount',
@@ -24,6 +25,8 @@ export class LegalaccountComponent implements OnInit {
   legaljmbg: LegalEntity;
   retacc: Account;
   greska: boolean;
+  accountclosureret: AccountClosure;
+  accountclosureadd: any={};
   constructor(private accountService: AccountService, private loginservice: LoginService, private currencyService: CurrencyService, private legalservice: LegalentityService) { }
 
   ngOnInit() {
@@ -117,5 +120,12 @@ export class LegalaccountComponent implements OnInit {
 
   }
 
+
+  deleteaccount(): void{
+
+    this.accountService.accountclosure(this.accountclosureadd)
+    .subscribe(data => {this.accountclosureret = data});
+
+  }
 
 }
