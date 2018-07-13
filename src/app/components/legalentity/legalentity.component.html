@@ -5,16 +5,17 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Short name</th>
+            <th>Ime</th>
+            <th>Skraceno ime</th>
             <th>Email</th>
             <th>Fax</th>
-            <th>Location</th>
-            <th>Address</th>
+            <th>Lokacija</th>
+            <th>Adresa</th>
             <th>MBR</th>
             <th>JMBG</th>
-            <th>Delivery address</th>
-            <th>Phone number</th>
+            <th>Adresa za isporuku</th>
+            <th>Broj telefona</th>
+            <th>Aktivnost</th>
             <th>Action<span class="glyphicon glyphicon-flash"></span></th>
           </tr>
         </thead>
@@ -30,6 +31,11 @@
             <td>{{legale.jmbg}}</td>
             <td>{{legale.deliveryAddress}}</td>
             <td>{{legale.phonenumber}}</td>
+            <td>{{legale.activity.name}}</td>
+            
+
+
+
             <td><span id="zoom" data-toggle="modal" data-target="#myModaledit" (click)="findlegalentity(legale.id)"  class="glyphicon glyphicon-pencil"></span><span id="zoom" (click)="deleteLegalEntity(legale.id)" class="glyphicon glyphicon-trash"></span></td>
           </tr>
 
@@ -54,13 +60,13 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <label class="col-sm-4">Name:</label>
+              <label class="col-sm-4">Ime:</label>
               <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.name" >                        
           </div>
           <br>
   
         <div class="row">
-            <label class="col-sm-4">Short name:</label>
+            <label class="col-sm-4">Skraceno ime:</label>
             <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.shortName" >                        
         </div>
         <br>
@@ -78,13 +84,13 @@
         <br>
         
         <div class="row">
-          <label class="col-sm-4">Location:</label>
+          <label class="col-sm-4">Lokacija:</label>
           <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.location" >                        
         </div>  
         <br>
   
         <div class="row">
-          <label class="col-sm-4">Address:</label>
+          <label class="col-sm-4">Adresa:</label>
           <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.address" >                        
         </div>
         <br>
@@ -102,18 +108,24 @@
         <br>
   
         <div class="row">
-          <label class="col-sm-4">Delivery address:</label>
+          <label class="col-sm-4">Adresa za isporuku:</label>
           <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.deliveryAddress" >                        
         </div>
         <br>
   
         <div class="row">
-          <label class="col-sm-4">Phone number:</label>
+          <label class="col-sm-4">Broj telefona:</label>
           <input class="col-sm-5" type="text" name="fivebads" [(ngModel)]="legalentityadd.phonenumber" >                        
         </div>
         <br>
-
-
+        <div class="row">
+          <label class="col-sm-4">Aktivnost:</label>
+          <select id="type" (change)="selectChangeHandler($event)" name="type" style="height:26px; width:175px; " class="col-sm-5">
+            <option class="option0" style="height: 30px;" value="0" selected hidden>Choose ...</option>
+            <option *ngFor="let activity of activities" style="height: 30px;" value={{activity.id}}>{{activity?.name}}</option>
+        </select>  
+        </div>
+        
 
 
           </div>
@@ -202,7 +214,13 @@
       </div>
       <br>
 
-
+      <div class="row">
+        <label class="col-sm-4">Aktivnost:</label>
+        <select id="type" (change)="selectChangeHandler1($event)" name="type" style="height:26px; width:175px; " class="col-sm-5">
+          <option class="option0" style="height: 30px;" value="0" selected hidden>Choose ...</option>
+          <option *ngFor="let activity of activities" style="height: 30px;" value={{activity.id}}>{{activity?.name}}</option>
+      </select>  
+      </div>
 
             
         </div>
