@@ -19,4 +19,12 @@ export class AnalysisService {
     return this.http.get('http://localhost:8090/analysis/save/xml/'+name, httpOptions);
   }
 
+  getNaplata(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/payment/'+name, httpOptions);
+  }
+
+  saveNaplata(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/save/payment/'+name, httpOptions);
+  }
+
 }
