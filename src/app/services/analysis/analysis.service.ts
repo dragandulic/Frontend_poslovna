@@ -31,4 +31,8 @@ export class AnalysisService {
     return this.http.get('http://localhost:8090/analysis/xml-prenos/'+name, httpOptions);
   }
 
+  savePrenos(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/save/xml-transfer/'+name, httpOptions);
+  }
+
 }
