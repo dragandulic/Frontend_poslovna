@@ -1,28 +1,47 @@
-<div class="div">
-    <form >
+
+<div class="row">
+    <div class="col-md-4 tabela" >
+        <table style="width: 30%">
+          <caption style="font-size: 0.5cm;">Nalozi :</caption>
+            <tr style=" height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_prenos_1.xml</th>
+              <th (click)="load1()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+            <tr style=" border: 1px solid #4d94ff;height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_prenos_2.xml</th>
+              <th (click)="load2()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+          </table>
+    </div>
+    <div class="col-md-4 nalog">
+    
       <h2 style="margin-left: 20px;margin-bottom: 20px">Nalog za prenos: </h2>
       <div class="form-group row" style="display: inline-block;margin-left: 20px">
   
         <label>Duznik :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="prenos.debtorOrderer" class="form-control margin"  disabled="true">
   
         <label>Svrha placanja :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="prenos.purposeOfPayment" class="form-control margin"  disabled="true">
   
         <label>Poverilac :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="prenos.creditorReceiver" class="form-control margin"  disabled="true">
   
   
         <label>Sifra placanja :</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 150px;" [(ngModel)]="prenos.code" class="form-control margin"  disabled="true">
   
   
         <label style="margin-top: 5px">Valuta :</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 150px;" [(ngModel)]="valuta" class="form-control margin"  disabled="true">
   
   
         <label style="margin-top: 5px">Iznos :</label>
-        <input style="width: 420px" class="form-control margin"  disabled="true">
+        <input style="width: 420px" [(ngModel)]="prenos.amount" class="form-control margin"  disabled="true">
   
   
         <br>
@@ -30,34 +49,34 @@
   
   
         <label>Racun duznika :</label>
-        <input style="width: 420px" class="form-control margin"  disabled="true">
+        <input style="width: 420px" [(ngModel)]="racunD" class="form-control margin"  disabled="true">
   
   
         <label style="margin-top: 5px">Model duznika :</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 150px;" [(ngModel)]="prenos.modelOfIndebtedness" class="form-control margin"  disabled="true">
   
         <label style="margin-top: 5px;">Poziv na broj(zaduzenje) :</label>
-        <input style="width: 420px;" class="form-control margin"  disabled="true">
+        <input style="width: 420px;" [(ngModel)]="prenos.referenceNumberOfIndebtedness" class="form-control margin"  disabled="true">
   
   
         <br>
         <br>
   
         <label>Racun poverioca :</label>
-        <input style="width: 420px" class="form-control margin"  disabled="true">
+        <input style="width: 420px" [(ngModel)]="racunP" class="form-control margin"  disabled="true">
   
   
         <label style="margin-top: 5px">Model poverioca:</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 150px;" [(ngModel)]="prenos.modelApproval" class="form-control margin"  disabled="true">
   
         <label style="margin-top: 5px;">Poziv na broj(odobrenje) :</label>
-        <input style="width: 420px;" class="form-control margin"  disabled="true">
+        <input style="width: 420px;" [(ngModel)]="prenos.referenceNumberCreditor" class="form-control margin"  disabled="true">
 
         <br>
         <br>
 
         <label style="margin-top: 5px">Hitno :</label>
-        <input type="checkbox" style="width: 25px;height: 25px;margin-left: 7px" class="form-control margin">
+        <input type="checkbox" [(ngModel)]="prenos.urgent" disabled="true" style="width: 25px;height: 25px;margin-left: 7px" class="form-control margin">
 
         <div style="text-align: center;margin-top: 20px">
           <button class="btn btn-success" style="height: 50px;width: 100%; border-radius: 12px;margin-bottom: 20px"
@@ -65,5 +84,8 @@
           </button>
         </div>
       </div>
-    </form>
-  </div>
+    
+    </div>
+    <div class="col-md-4"></div>
+
+</div>

@@ -27,4 +27,8 @@ export class AnalysisService {
     return this.http.get('http://localhost:8090/analysis/save/payment/'+name, httpOptions);
   }
 
+  getPrenos(name: any): Observable<any> {
+    return this.http.get('http://localhost:8090/analysis/xml-prenos/'+name, httpOptions);
+  }
+
 }
