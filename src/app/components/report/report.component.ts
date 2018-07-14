@@ -32,4 +32,17 @@ export class ReportComponent implements OnInit {
   });
 }
 
+ sendAccountReport(){
+
+  this.reportService.getClientReport(this.report).subscribe(data=>{
+
+    let file = new Blob([data], { type: 'application/pdf' });
+
+
+
+    FileSaver.saveAs(file, 'Client_accounts');
+});
+
+ }
+
 }

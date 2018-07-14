@@ -6,6 +6,7 @@ import 'rxjs/add/observable/throw';
 import { Observable } from 'rxjs/Observable';
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ClientReportDTO } from '../../clientReportDTO';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,5 +22,9 @@ export class ReportService {
 
     //const headers = new HttpHeaders({'Content-Type': 'application/pdf'});
     return this.http.get('http://localhost:8090/reports/getAccounts/'+id, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'blob' });
+  }
+
+  getClientReport(clientDto:ClientReportDTO): Observable<Blob> {
+    return this.http.post('http://localhost:8090/reports/getClientReport',clientDto, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'blob' });
   }
 }
