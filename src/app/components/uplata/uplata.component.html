@@ -1,47 +1,66 @@
 
-
-<div class="div">
-    <form >
+<div class="row">
+    <div class="col-md-4 tabela" >
+        <table style="width: 30%">
+          <caption style="font-size: 0.5cm;">Nalozi :</caption>
+            <tr style=" height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_uplatu_1.xml</th>
+              <th (click)="load1()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+            <tr style=" border: 1px solid #4d94ff;height: 40px">
+              <th  style=" border: 1px solid #4d94ff;text-align: center">nalog_za_uplatu_2.xml</th>
+              <th (click)="load2()" style=" border: 1px solid #4d94ff;text-align: center;">
+                <button class="btn btn-info">Ucitaj</button>
+              </th>
+            </tr>
+          </table>
+    </div>
+    <div class="col-md-4 nalog">
+    
       <h2 style="margin-left: 20px;margin-bottom: 20px">Nalog za uplatu :</h2>
       <div class="form-group row" style="display: inline-block;margin-left: 20px">
   
         <label>Uplatilac :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="uplata.debtorOrderer" class="form-control margin"  disabled="true">
     
         <label>Svrha uplate :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="uplata.purposeOfPayment" class="form-control margin"  disabled="true">
     
         <label>Primalac :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="uplata.creditorReceiver" class="form-control margin"  disabled="true">
 
         <label>Sifra placanja :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 150px;height: 35px" [(ngModel)]="uplata.code" class="form-control margin"  disabled="true">
   
         <label>Valuta :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 150px;height: 35px" [(ngModel)]="valuta" class="form-control margin"  disabled="true">
   
         <label>Iznos :</label>
-        <input style="width: 420px;height: 35px" class="form-control margin"  disabled="true">
+        <input style="width: 420px;height: 35px" [(ngModel)]="uplata.amount" class="form-control margin"  disabled="true">
   
         <br>
         <br>
   
         <label>Racun primaoca :</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 420px;" [(ngModel)]="racun" class="form-control margin"  disabled="true">
   
   
         <label style="margin-top: 5px">Model :</label>
-        <input style="width: 150px;" class="form-control margin"  disabled="true">
+        <input style="width: 150px;" [(ngModel)]="uplata.modelOfIndebtedness" class="form-control margin"  disabled="true">
 
         <label style="margin-top: 5px;">Poziv na broj(odobrenje) :</label>
-        <input style="width: 420px;" class="form-control margin"  disabled="true">
+        <input style="width: 420px;" [(ngModel)]="uplata.referenceNumberOfIndebtedness" class="form-control margin"  disabled="true">
         
                
         <div style="text-align: center;margin-top: 20px">
           <button class="btn btn-success" style="height: 50px;width: 100%; border-radius: 12px;margin-bottom: 20px"
-                  >Potvrdi
+             (click)="confirmClick()">Potvrdi
           </button>
         </div>
       </div>
-    </form>
-  </div>
+    
+    </div>
+    <div class="col-md-4"></div>
+</div>
