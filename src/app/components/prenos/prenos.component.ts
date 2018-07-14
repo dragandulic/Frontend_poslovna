@@ -49,4 +49,9 @@ export class PrenosComponent implements OnInit {
     location.reload();
   }
 
+  confirmClick(){
+    const type = this.route.snapshot.params.type;
+    this.analysisService.savePrenos(type).subscribe();
+  }
+
 }
