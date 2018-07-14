@@ -47,6 +47,11 @@ export class IsplataComponent implements OnInit {
     location.reload();
   }
 
+  load3(){
+    this.router.navigateByUrl('navbar/home/isplata/nalog_za_isplatu_3');
+    location.reload();
+  }
+
   confirmClick(){
     const type = this.route.snapshot.params.type;
     this.analysisService.savePaymentCheck(type).subscribe();

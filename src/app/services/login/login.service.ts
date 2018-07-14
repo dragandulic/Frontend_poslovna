@@ -21,6 +21,10 @@ export class LoginService {
 
   }
 
+  getCliringt(bank:any={}): Observable<any> {
+    return this.http.post('http://localhost:8090/clearing/generateClearing',bank,httpOptions);
+  }
+
   setLocalStore(u){
     this.localStorage.store("loggedin",JSON.stringify(u));
   }

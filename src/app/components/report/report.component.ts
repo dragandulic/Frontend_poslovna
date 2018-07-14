@@ -40,7 +40,7 @@ export class ReportComponent implements OnInit {
 
 
 
-    FileSaver.saveAs(file, 'Client_accounts');
+    FileSaver.saveAs(file, 'Izvestaj_Klijenta_'+this.report.datefrom+'_'+this.report.dateto);
 });
 
  }

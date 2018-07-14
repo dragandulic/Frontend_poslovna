@@ -15,8 +15,8 @@
             <li class="zoom"><a [routerLink]="['currency']">Valute</a></li>
             <li class="zoom"><a [routerLink]="['exchange']">Kursna lista</a></li>
             <li class="zoom"><a [routerLink]="['activity']">Delatnosti</a></li>
-            <li class="zoom"><a href="#">Kliring</a></li>
-            <li class="zoom"><a href="#">RTGS</a></li>
+            <li  class="zoom"><a (click)="getCliring()" >Kliring</a></li>
+            <li class="zoom"><a >RTGS</a></li>
       </ul> 
       <ul class="nav navbar-nav navbar-right">
         <ng-container  *ngIf="user!==null;else elseContent">

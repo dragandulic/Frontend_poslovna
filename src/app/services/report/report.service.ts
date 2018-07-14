@@ -27,4 +27,6 @@ export class ReportService {
   getClientReport(clientDto:ClientReportDTO): Observable<Blob> {
     return this.http.post('http://localhost:8090/reports/getClientReport',clientDto, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'blob' });
   }
+
+ 
 }

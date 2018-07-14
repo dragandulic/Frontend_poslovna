@@ -32,6 +32,10 @@ export class NavbarComponent implements OnInit {
    
  }
 
+ getCliring(){
+   this.loginService.getCliringt(this.bank).subscribe(data=>console.log(data));
+ }
+
 
 
   /*logout(){
